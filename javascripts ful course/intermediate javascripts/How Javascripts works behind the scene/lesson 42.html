@@ -7,56 +7,85 @@
     <title>the javascripts engine and runtime</title>
 </head>
 <body>
-    <style>
+    <h1><center style="color: #4fe431;">THE JAVASCRIPT ENGINE AND RUNTIME<center></h1>
+        <main>
+        <section>
+        <h2><u>The JavaScript Engine</u></h2>
+        <figure>
+            <figcaption>JavaScript Engine showing the Call stack and the Heap</figcaption>
+        <img src="./img/javascript engine.jpeg" alt="">
+    </figure>
+        <p>The JavaScript engine is simply a computer program that interprets JavaScript code. The engine is responsible for executing the code.</p>
 
-    </style>
-    <h1><center style="color: #4fe431;">the javascripts engine and runtime</center></h1>
-    <dt>
-        <dl>javascripts engine</dl>
-        <dd>javascripts engine is a software component that executes code.</dd>
-        <p>javascripts engine contains a call stack and heap</p>
-    </dt>
-    <!--  every browser has its own javascripts engine: the most popular one is V8 engine which powers google chrome and nodejs -->
-    <section>
-<div class="show">
-    <button class="click">show image</button>
-    <img src="stack--1.png" alt="" class="stack">
-    <!-- the items in call stack is called EXECUTION CONTEXT while the items in heap are the OBJECT IN THE MEMORY.
-     -->
-</div>
+        <p>Every major browser has a JavaScript engine that executes JavaScript code. The most popular one is the Google Chrome V8 engine. Google's V8 powers Google Chrome and Node.js, a back-end JavaScript runtime environment used to build server-side applications.</p>
+
+        <p><b>Other major browser engines include:</b></p>
+
+        <ul>
+            <li>SpiderMonkey developed by Mozilla for Firefox</li>
+            <li>JavaScript which powers the Safari browser</li>
+            <li>Chakra which powers Internet Explorer</li>
+        </ul>
+
+        <p>Any JavaScript engine typically contains a call stack and a heap. The call stack is where the code is executed. The heap is an unstructured memory pool that stores all the objects needed for the application.</p>
+
+        <p>Since the computer’s processor only understands binary, 0’s and 1’s, the code has to be translated to 0’s and 1’s.</p>
+
+        <p>When a code snippet passes into the engine, the code is initially parsed, that is read. The code is subsequently parsed to a data structure called the abstract syntax tree (AST). The resulting tree is then used to create machine codes.</p>
+
+        <p>Execution happens in the JavaScript engine call stack using the execution context. This is the environment where JavaScript code is executed.</p>
+        <figure>
+            <figcaption>A diagram illustration showing the JavaScript execution process</figcaption>
+            <img src="./img/javascript execution.jpeg" alt="">
+        </figure>
 </section>
-<dt>
-    <dl style="color: #4fe431;">Javascript call-stack</dl>
-    <dd>the call stack is used by javascript to keep track of multiple function calls.</dd>
-</dt>
-<dt>
-    <dl style="color: #4fe431;">javascript heap</dl>
-    <dd>heap is used to store object and functions in javascript</dd>
-</dt>
-<h3><center style="color: #4fe431; text-decoration: underline; margin-bottom: 20px;">computer science sidenote: COMPILATION AND INTERPRETATION</center></h3>
-<p ><span style="color: #4fe431; margin-right:
-10px;">COMPILATION:</span> entire code is converted into machine code at once, and written to a binary file that can be excuted by a computer</p>
-<p><span style="color: #4fe431; margin-right:
-    10px;">INTERPRETATION: </span>interpreter runs through the source code and excutes it line by line.</p>
-<img src="intercom  (1).png" alt="" class="intercom">
-<img src="intercom  (2).png" alt="" class="intercom">
 
-<p><span  style="color: #4fe431; margin-right:
-    10px;">JUST-IN-TIME (JIT) COMPLILATION: </span> entire code is converted into machine code at once, then executed immediately.</p>
-    <div class="jtime">
-    <img src="just-in-time.png" alt="" class="just">
-    <img src="just-in-time-STEP 2.png" alt="" class="just">
-    <img src="just-in-time-final-STEP.png" alt="" class="just time">
-</div>
-<p>more explanation about <span   style="color: #4fe431; margin-left:
-    10px;"> JAVASCRIPT RUNTIME:</span></p>
-    <div class="jtime">
-        <img src="runtime-STEP 1.png" alt=""  class="just">
-        <img src="runtime-STEP 2.png" alt=""  class="just">
-        <img src="runtime-STEP 3.png" alt=""  class="just">
-        <img src="runtime-final STEP.png" alt=""  class="just">
-        <img src="runtime-final-STEP.png" alt=""  class="just">
-    </div>
+<section>
+    <h2><u>The JavaScript Runtime</u></h2>
+    <p>Think of the JavaScript runtime as the house that encompasses all the components needed to run JavaScript. This house comprises the JavaScript engine, Web APIs, and the callback queue.</p>
+
+    <p>Web APIs are functionalities that are provided to the engine but are not part of the JavaScript language. They are accessible to the engine through the browser and help access data or enhance browser functionality. Examples are the Document Object Model (DOM) and Fetch APIs.</p>
+    <figure>
+        <figcaption><b>JavaScript Runtime in the browser</b></figcaption>
+    <img src="./img/javascript runtime.jpeg" alt="">
+    <figcaption>A diagram of Javasscript Runtime in the Browser containing the Javasscript Engine, WEB APIs, and the CallBack Queue</figcaption>
+</figure>
+<p>The callback queue includes callback functions that are ready to be executed. The callback queue ensures that callbacks are executed in the First-In-First-Out (FIFO) method and they get passed into the stack when it’s empty.</p>
+<i>The browser runtime and Node.js are examples of runtime environments.</i>
+<p>When JavaScript executes within a web browser it is operating within the browser’s runtime environment. The browser runtime environment provides access to the DOM which enables interaction with web page elements, handling events, and manipulating the page structure.</p>
+</section>
+
+<section>
+    <h2><center>JavaScript Optimization Strategies</center></h2>
+    <p>Modern JavaScript engines have some optimization strategies put in place to enhance the performance of code execution. These optimizations occur dynamically during the execution process.</p>
+    <dt>
+        <dd>
+            <p>The process that involves the translation of Javascript code into machine code occurs using compilation and interpretation.</p>
+            <p>In COMPILATION, the entire source code is converted into machine code and written into binary file to be executed by the computer</p>
+            <figure>
+                <figcaption>A diagram showing the code compilation process</figcaption>
+                <img src="./img/compilation.jpeg" alt="">
+            </figure>
+            <p>In contrast, during INTERPRETATION, the interpreter goes through the source code and interprets it line by line, executing each line as it encounters it.</p>
+            <figure>
+                <figcaption>A diagram showing the code interpretation process</figcaption>
+            <img src="./img/interpretation.jpeg" alt="">
+        </figure>
+        
+        </dd>
+    </dt>
+    <p>JavaScript used to be an interpreted language, but interpreted languages are slower compared to compiled languages.</p>
+    <p>In order to optimize the performance of web applications, JavaScript combines both compilation and interpretation. This is called Just-in-Time compilation. This method compiles the entire code into machine code all at once and executes it.</p>
+    <figure>
+        <figcaption>A diagram showing Just-in-Time compilation of code</figcaption>
+        <img src="./img/just-in-time.jpeg" alt="">
+    </figure>
+    <p>JUST-IN-TIME compilation involves the same two processes as regular compilation, but here the machine code isn’t written into a binary file. The code is also executed right away after compilation.</p>
+    <p>This has had a significant impact on the speed of code execution in JavaScript. So hopefully this helps dispel the notion that JavaScript is a purely interpreted language.</p>
+    <p>To fully optimize JavaScript code, the engine first creates an unoptimized version of the machine code so it can start executing immediately. While that is ongoing, the code is being re-optimized and recompiled in the background of the currently running program execution. This is done multiple times to produce the final, most optimized version.</p>
+</section>
+</main>
+    
 
 <script src="lesson 42.js"></script>
     

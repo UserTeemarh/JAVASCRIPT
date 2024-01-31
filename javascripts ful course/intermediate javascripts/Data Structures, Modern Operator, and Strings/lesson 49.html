@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT DESTRUCTURING</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: center;
+            color: white;
+            min-height: 100vh;
+            min-width: 500px;
+            font-size: 22px;
+
+        }
+        .array {
+            width: 50%;
+            padding: 20px 20px;
+            border-radius: 10px 10px;
+            background-color: rgba(2, 0, 36, 0.5);
+            font-size: 17px;
+        }
+        ul li {
+            margin: 10px 10px;
+        }
+        @media (max-width: 700px) {
+            body {
+                font-size: 15px;
+                min-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><center><u>OBJECT DESTRUCTURING</u></center></h1>
+    <p>Object Destructuring is the syntax for extracting values from an object property and assigning them to a variable. The destructuring is also possible for JavaScript Arrays. By default, the object key name becomes the variable that holds the respective value.</p>
+    <h2><u>Implementation of Object Destructuring.</u></h2>
+    <ol>
+        <li>
+            <p style="font-size: 25px;"><b>How to assign to existing variable names:</b></p>
+            <p>The following code destructures the object inot variable with a different name than the object property:</p>
+            <ul>
+            <li style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">
+                var employee = {    // Object we want to destructure <br>
+                    firstname: &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;  'Jon', <br>
+                    lastname: &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;  'Snow', <br>
+                    dateofbirth: &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;  '1990' <br>
+                }; <br>
+                <br>
+              <span style="color: rgba(223, 223, 238, 0.5);">  // Destructuring the object into variables with <br>
+                // different names than the object variables</span> <br>
+                var { firstname: fn, lastname: ln, dateofbirth: dob } = employee; <br> <br>
+                console.log( fn, ln, dob);
+            </li>
+        </ul>
+        </li>
+        <li>
+            <p style="font-size: 25px;"><b>How to assign new variable names</b></p>
+            <p>The following code destructures the object into variables with a different name than the object property:</p>
+            <ul>
+                <li style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">
+                    var employee = {  <span>  // Object we want to destructure </span> <br>
+                        firstname:&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; 'Jon', <br>
+                        lastname:&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; 
+                        &NonBreakingSpace;'Snow', <br>
+                        dateofbirth: &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;'1990' <br>
+                    }; <br>
+                    <br>
+                   <span style="color: rgba(223, 223, 238, 0.5);"> // Destructuring the object into variables with <br>
+                    // different names than the object variables  </span><br>
+                    var { firstname: fn, lastname: ln, dateofbirth: dob } = employee; <br>
+                    <br>
+                    console.log( fn, ln, dob);
+                </li>
+            </ul>
+        </li>
+        <li>
+            <p style="font-size: 25px;"><b>How to assign to a variable with default values:</b></p>
+            <p>We can also assign default values to variables whose keys may not exist in the object we want to destructure. This will prevent our variable from having an undefined value assigned to it. The code below demonstrates this:</p>
+            <ul>
+                <li style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">var employee = {&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;   <span style="color: rgba(223, 223, 238, 0.5);"> // Object we want to destructure </span> <br>
+                    firstname: &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;'Jon', <br>
+                    lastname:&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;'Snow', <br>
+                    dateofbirth: &NonBreakingSpace; '1990' <br>
+                };<br>
+                <br>
+               <span style="color: rgba(223, 223, 238, 0.5);"> // Destructuring the object into variables without 
+                // assigning default values </span> br 
+                var { firstname, lastname, country } = employee;  <br>
+                console.log("Without setting default values"); <br>
+                console.log( firstname, lastname, country);
+                <br>
+                <br>
+               <span style="color: rgba(223, 223, 238, 0.5);"> // Destructuring the object into variables by 
+                // assigning default values </span>
+                var { firstname = 'default firstname', <br>
+                      lastname = 'default lastname', <br>
+                      country = 'default country' } = employee; <br>
+                console.log("\n After setting default values"); <br>
+                console.log( firstname, lastname, country);</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Pros:</h3>
+    <ul>
+        <li>It allows code to be written in a shorter and readable way, since it allows wrapping of variables inside one object and then access the individual elements in another function without using the dot notation.</li>
+        <li>It allows default values to be set for specific variable, it makes sure the code doesn't break in case a value is missing</li>
+        <li>Since variables can be assigned for different aliases, it allows the code to be shorter and more robust while ensuring readability and descriptive variable names</li>
+        <li>When using large frameworks that pass objects to function which a lot of values, if only or two values is required, it can destructure it. This helps make the code easier to work with.</li>
+    </ul>
+    <h3>Cons:</h3>
+    <ul>
+        <li>If an object has a lot of variables, it becomes very tedious to destructure such object, use the dot notation.</li>
+        <li>In case an object is different from what was expected and such object wasn't accounted for, it might result in bugs in the code.</li>
+    </ul>
+    <fieldset>
+        <legend>Exercise</legend>
+        <ul>
+            <li>Destructure the first book object from the <i>books</i> array into variables called <i>title, author, ISBN</i></li>
+            <li>Each book object has the <i>keywords</i> property. Destructure the first book object from the <i>books</i> array into a variable called <i>tags</i>. The <i>tags</i> variable should be assigned with the value of the <i>keywordss</i> property.</li>
+            <li>
+                The seventh book from the books array is missing the <i>programmingLanguage</i> property. Destructure the seventh book object <i>(books[6]) </i> into variables called <i>language</i> and <i>programmingLanguage.</i>Assign the <i>programmingLanguage</i> variable with a default value of 'unknown'.
+            </li>
+            <li>
+                <p>Below are two variables called <i>bookTitle</i> and <i>bookAuthor.</i> Reassign them with the values of the <i>title</i> and <i>author</i> properties of the first book object from the <i>books</i> array.
+                </p>
+                <li style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">
+                    let bookTitle = 'unknown'; <br>
+                    let bookAuthor = 'unknown';
+                </li>
+            </li>
+            <li>
+                <p>
+                    Each book object has a deeply nested <i>rating</i> property as illustrated below:
+                </p>
+                <li style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">
+                    { <br>
+                        title: 'Algorithms', <br>
+                        ... <br>
+                        thirdParty: { <br>
+                          goodreads: { <br>
+                            rating: 4.41,  <br>           
+                            ratingsCount: 1733, <br>
+                            reviewsCount: 63, <br>
+                            fiveStarRatingCount: 976, <br>
+                            oneStarRatingCount: 13 <br>
+                         &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; } <br>
+                         &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;} <br>
+                      },
+                </li>
+                <p>Destructure the first book from the <i>books</i> array into a variable called <i>bookRating</i>. In the result of your destructuring, the <i>bookRating</i> variable should be assigned with the value of the <i>books[0].thirdParty.goodreads.rating</i> property</p>
+            </li>
+            <li>
+                <p>Write a function called <i>printBookInfo</i> that has three parameters called <i>title, author</i> and <i>year</i>. This function should work for a single object passed as an argument, and it should log to the console information about the book in this format: " <i>${title} by ${author}, ${year}</i> "</p>
+                <p>If <i>year</i> is undefined (was not passed), it should be assigned with a default value of 'year unknown'</p>
+                <li>
+                    <dl>
+                        <dt><b>Code:</b></dt>
+                        <dd style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });</dd>
+                    </dl>
+                    <dl>
+                        <dt><b>Expected Output:</b></dt>
+                        <dd style="background: rgba(2,0,36,1); padding: 20px 20px; font-size: 18px; border-radius: 10px 10px;" aria-readonly="true">"Algorithms by Robert Sedgewick, 2011"</dd>
+                    </dl>
+                </li>
+
+            </li>
+        </ul>
+    </fieldset>
+    <!-- <script src="lesson 49.js"></script> -->
+    <script src="assign 49.js"></script>
+</body>  
+</html>

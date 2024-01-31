@@ -4,10 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lesson 45.css">
-    <title>Scoping in Practice</title>
+    <title>Variable Environment: Hoisting and the TDZ</title>
 </head>
 <body>
-    <h1><center>Scoping in Practice</center></h1>
+    <h1><center>Variable Environment: Hoisting and the TDZ</center></h1>
+    <script src="lesson 45.js"></script>
+    <main>
+        <section>
+            <h2><u>What is Hoisting?</u></h2>
+            <p>JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.
+            </p>
+            <i>In colloquial terms, any of the following behaviors may be regarded as hoisting:</i>
+            <ul>
+                <li>Being able to use a variable's value in its scope before the line it is declared. "(Value hoisting)"</li>
+                <li>Being able to reference a variable in its scope before the line it is declared, without throwing a <u>referenceError,</u> but the value is always <u>undefined</u>. "(Declaration hoisting)"</li>
+                <li>The declaration of the variable causes behavior changes in its scope before the line in which it is declared.</li>
+                <li>The side effects of a declaration are produced before </li>
+            </ul>
+            <h3><u>Where Hoisting takes place?</u></h3>
+            <ul>
+                <li><b>Function Hoisting</b></li>
+                <li><b>Variable Hoisting</b>: Variables can be declared with the <i>var, let, and const</i> variables. And these variable declaration would be hoisted, but behave differently.
+                <ul>
+                    <li><b>Hoisting <small>let</small> variables</b> Although variables declared with <small>let</small> are also hoisted, they have a different behavior. 
+                        <br> The variables are hoisted to the top of the scope they are declared in (local, global, or block), but are not accessible because they have not been initialized. This concept is also reffered to as the <u>Temporal Dead Zone.</u> <br>
+                        They can only be accessible after the initilization line has been executed</li>
+                        <li><b>Hoisting <small>const</small> variables</b>: &NonBreakingSpace; Just like <small>let</small>, variables declared with <small>const</small> are hoisted, but not accessible. <br> <br> The same concept of a <b>temporal dead zone</b> applies to <small>const</small> variables. Such variables are hoisted to the top of the scope, they are defined in (local, global, or block), but they remain inaccessible until the variables are initialized with a value.</li>
+                </ul></li>
+            </ul>
+        </section>
+        <section>
+            <h2><u>Temporal Dead Zone (TDZ)</u></h2>
+            <p>The temporal dead zone (TDZ) is a specific period in the execution of JavaScript code where variables declared with <small>let</small> and <small>const</small> but cannot be accessed until the moment the computer completely initializes it with a value. During this phase, accessing or using the variable will result in a referenceError.</p>
+            <p>A block's temporal dead zone starts at the beginning of the block's local scope. It ends when the computer fully initilizes the variable with a value.</p>
+        </section>
+        <section>
+            <h3><center>Key Differences between TDZ and Hoisting</center></h3>
+            <dt>
+                <dl>TDZ (Temporal Dead Zone)</dl>
+                <dd>
+                    <ul>
+                        <li>Introduced in <b>ES6</b> with <b>let</b> and <b>const</b> declarations</li>
+                        <li>Variables exist but cannot be accessed until their declaration</li>
+                        <li>Accessing variables in the TDZ results in a <b>ReferenceError.</b></li>
+                        <li>Provides a way to catch potential issues and enforce better programming practices. </li>
+                    </ul>
+                </dd>
+            </dt>
+            <dt>
+                <dl><b>Hoisting:</b></dl>
+                <dd>
+                    <ul>
+                        <li>Applies to variables declared with <b>var</b></li>
+                        <li>Declarations are moved to the top of their scope during compilation.</li>
+                        <li>Variables are accessible before their declaration but have an initial value of <b>undefined.</b></li>
+                        <li>May lead to unexpected behavior if not understood and used correctly.</li>
+                    </ul>
+                </dd>
+            </dt>
+        </section>
+    </main>
     <script src="lesson 45.js"></script>
 </body>
 </html>

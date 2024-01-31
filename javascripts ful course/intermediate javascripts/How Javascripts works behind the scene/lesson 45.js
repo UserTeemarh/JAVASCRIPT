@@ -1,41 +1,44 @@
-"use strict";
+'use strict';
+// variables hoisting
 
-function calAge(birthYear) {
-  const age = 2023 - birthYear;
+console.log(me);
+// console.log(job);
+// console.log(year);
 
 
-  function printAge () {
-  
-    let output = `${firstName}, You are ${age} and born in ${birthYear}`;
-    console.log(output);
-    var millenia = true
-    
+var me = 'jonas';
+let job = 'teacher';
+const year = 1991;
 
-    if (age >= 20 && age <= 30) {
-      // creating a variable with same name as outer's scope variable
-      const firstName = 'Augustine';
-      // assigning a new value to output variable
-      output = 'New Output'
-      const str = `${firstName}, oh, You are a millenia`;
-      console.log(str);
-    } else {
-      console.log('you are born in the 10th century');
-    }
+console.log(job);
+console.log(year);
 
-    function add (a,b) {
-      const addMe =  a + b;
-      return addMe;
-    }
-   console.log(millenia);
-    console.log(add(2 , 3));
- 
-    console.log(output);
-    
-  }
-  printAge()
 
-  return age;
+
+//function hoisting
+
+console.log(addDecl(2, 4));
+console.log(addExpr(5, 7));
+console.log(addArrow(10, 5));
+
+function addDecl(a, b) {
+    return a + b;
 }
-const firstName = 'Schedtmann';
-calAge(1999);
 
+const  addExpr = function (a, b) {
+    return a + b;
+}
+var addArrow = (a,b) => a + b;
+
+
+//example
+console.log(undefined);
+
+if (!newProducts) {
+    deleteShoppingCart();
+}
+var newProducts = 10;
+
+function deleteShoppingCart() {
+    console.log('All products deleted');
+}

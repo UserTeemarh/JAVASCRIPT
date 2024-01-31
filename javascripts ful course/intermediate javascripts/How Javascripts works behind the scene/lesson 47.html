@@ -3,19 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lesson 47.css">
-    <title>The THIS keyword</title>
+    <title>PRIMITIVES vs OBJECT (Primitives vs Reference Types)</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #1d5f10, #123004 );
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        mark {
+            background: #25a30c;
+            color: whitesmoke;
+        } 
+    </style>
 </head>
 <body>
-    <h1><center>The THIS keyword</center></h1>
-    <p>"This" keyword refers <mark>to an object that is executing the current piece of code</mark>. it references the object that is executing the current function. it also takes the value of (points to) the "owner" of the function in which the <b>this</b> keyword is used</p>
-    <p>"this" is NOT static, it depends on how the function is called, and its value is only assigned when the function is <b>actually called</b>
-    </p>
-    <h3> 
-     <u>  four different ways  in which functions can be called. </u>
-    </h3>
+    <h1><center>PRIMITIVES vs OBJECT (Primitives vs Reference Types)</center></h1>
+    <main>
+        <section>
+    <h2><u>Primtive data types in JavaScript
+    </u></h2>
+    <p>In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods or properties. These data types are pretty simple, and are sometimes treated as the lowest level of implementation of a programming language. </p>
+    <dt>
+        <dl><b>Examples of such data types are</b></dl>
+        <ul>
+            <li>Number</li>
+            <li>String</li>
+            <li>Boolean</li>
+            <li>Undefined</li>
+            <li>BigInt</li>
+            <li>Null</li>
+        </ul>
+    </dt>
+    <p>NOTE: Strings do have methods: <mark>But the fact is, JavaSvript converts primitive strings to string objects, so that it is possible to use string object methods.</mark></p>
+    <h3>How are primitive data types treated in JavaScript?</h3>
+    <ul>
+        <li>When you declare a primitive data type in JavaScript, it is stored on a stack. A stack is a simple data structure that the computer uses to store and retrieve data quickly.</li>
+        <li>A primitive data type on the stack is identified by the variable name you used for declaration in your program. With each primitive data type you create, data is added to the stack.</li>
+    </ul>
+        <i>To implement this, say we declare a variable, numOne, and give it a value of 50. We go on to create another variable, numTwo, and assign it the same value of 50. So both variables have the same value.
+        </i>
+        <p>What happens on the stack is that, the computer creates room for numOne and stores its assigned value on the stack. When numTwo is created, the computer again creates room, and stores 50 on the stack. It does not matter that both variables are assigned the same value.</p>
+ 
     <figure>
-    <img src="this keyword.png" width="1050px">
+        <figcaption>A diagram illustration for the example above:</figcaption>
+        <img src="primitive type.png" alt="" width="500px">
+    </figure>
+</section>
+
+<section>
+    <h2><u>Reference data types in JavaScript
+    </u></h2>
+    <p>Reference data types, unlike primitive data types, are dynamic in nature. That is, they do not have a fixed size.
+    </p>
+    <p>Most of them are considered as objects, and therefore have methods.</p>
+    <dt>
+        <dl><b>Examples of such data types include</b></dl>
+        <dd>
+            <ul>
+                <li>Arrays</li>
+                <li>Functions</li>
+                <li>Object</li>
+                <li>Collections</li>
+                <li>Dates</li>
+                <li>Other types of objects...</li>
+            </ul>
+        </dd>
+    </dt>
+</section>
+<section>
+    <h3><center>What's the difference between primitive and reference data types?</center></h3>
+    <p>The difference comes in when the computer has to store a reference data type. When you create a variable and assign it a value that is a reference data type, the computer does not directly store that data type in that variable (as is the case with primitive types).</p>
+    <p>What is assigned to that variable is a pointer that points to the location of that data type in memory.</p>
+    <figure>
+        <figcaption>An example of call stack and heap</figcaption>
+    <img src="ref vs primitive.png" alt="" width="500px">
 </figure>
+    <i>As you can see in the image above, we have two data structures now. A stack, and a heap. Say we declared an object, for example. The object itself is stored on a heap, and its pointer is stored on a stack. The pointer is identified by the object's variable name, and points to that object.</i>
+</section>
+</main>
+    <script src="lesson 48.js"></script>
 </body>
 </html>

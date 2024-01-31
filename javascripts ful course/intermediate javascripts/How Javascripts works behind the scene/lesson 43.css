@@ -3,37 +3,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    text-transform: capitalize;
     font-size: 25px;
 }
-dt, dd {
+ul li {
     margin: 10px;
-}
-mark {
-    background: #a1e593;
-    opacity: 0.8;
-}
-ol li {
-    margin: 10px;
-}
-.image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.image img {
-    width: 520px;
-    height: 300px;
-    margin: 10px;
-    transition: all 0.5s ease-in-out;
-}
-.image img:active {
-    transform: skew(5deg, -5deg);
-}
-.image img:hover {
-    transform: scale(1.1);
-}
-b {
-    color: #a1e593;
 }

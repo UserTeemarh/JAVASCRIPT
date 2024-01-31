@@ -4,67 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lesson 46.css">
-    <title>Variable Environment: Hoisting and the TDZ</title>
+    <title>The THIS keyword</title>
 </head>
 <body>
-    <h1><center>Variable Environment: Hoisting and the TDZ</center></h1>
+    <h1><center>The THIS keyword</center></h1>
+    <p>"This" keyword refers <mark>to an object that is executing the current piece of code</mark>. it references the object that is executing the current function. it also takes the value of (points to) the "owner" of the function in which the <b>this</b> keyword is used.</p>
+    <p>"this" is NOT static, it depends on how the function is called, and its value is only assigned when the function is <b>actually called.</b> An important NOTE is that: <mark> </mark>&OpenCurlyQuote;THIS&CloseCurlyQuote; is not a variable - it's a keyword, so its value can't be changed or reassigned.
+    </p>
+    <h3> 
+     <u>Different ways  in which &OpenCurlyDoubleQuote;THIS&CloseCurlyQuote; can be called. </u>
+    </h3>
     <dt>
-        <dl><b>what is Hoisting in Javascript?</b></dl>
-        <dd>hoisting makes types of variables accessible/usable in the code before they ae actually declared. <mark>in other word</mark> Javascript hoisting occurs during the creation phase of the execution context that moves the variable and function declarations to the top of their scope.</dd>
-    </dt>
-    <i><center>behind the scenes</center></i>
-    <p><b>before execution,</b> code is scanned for variable declarations, and for each variable a new property is created in the <b>variable environment object.</b></p>
-
-    <table border="1">
-        <caption>functions and variable that hoisting works for.</caption>
-        <thead>
-            <th>&NonBreakingSpace;</th>
-            <th>HOISTED</th>
-            <th>INITIAL VALUE</th>
-            <th>SCOPE</th>
-        </thead>
-           <tbody>
-            <th>function declarations</th>
-            <td>✅ YES</td>
-            <td>actual function</td>
-            <td>block (in strict mode, otherwise function)</td>
-            <tr class="tsec">
-               <th>var variables</th>
-               <td>✅ YES</td>
-               <td>undefined</td>
-               <td>function</td>
-            </tr>
-            <tr>
-                <th>let and const variables</th>
-                <td>🚱 NO (technically, yes. but not in practice)</td>
-                <td>&lt; uninitialized &gt; TDZ (Temporal Dead Zone)</td>
-                <td>block</td>
-            </tr>
-            <tr class="tsec">
-                <th>function expression and arrows</th>
-                <th scope="col" colspan="3" class="sec">depends if using var or let/const</th>
-            </tr>
-           </tbody>
-    </table>
-    <dt>
-        <dl><b>what is TDZ in Javascript?</b></dl>
-        <dd>TDZ (temporal dead zone) is <mark>the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.</mark> <b>A block</b> is a pair of braces ( {...}) used to group multiple statements. <b>Initialization</b> occurs when you assign an initial value to a variable</dd>
-    </dt>
-    <dt class="isolate">
-        <dl><b>where exactly is the scope of a temporal dead zone?</b></dl>
-        <dd>a block's temporal dead zone starts at the beginning of the block's local scope. it ends when the computer fully initializes your variable with a value.</dd>
-    </dt>
-    <table border="1">
-        <caption>what is the difference between temporal dead zone and hoisting?</caption>
-        <thead>
-            <th>temporal dead zone (TDZ)</th>
-            <th>hoisting</th>
-        </thead>
-        <tbody>
-            <td class="tsec">temporal dead zone is the period between variable is initiated and hoisted</td>
-            <td>hoisting is the invoking the variables or functions at the top of the scope no matter where it declared.</td>
-        </tbody>
-    </table>
-    <script src="lesson 46.js"></script>
+    <dl style="font-weight: bolder;">How to Call &OpenCurlyDoubleQuote;THIS&CloseCurlyQuote; By Itself
+    </dl>
+    <dd>If this is called by itself, meaning not within a function, object, or whatever, it will refer to the global window object.
+        <p>If you print it like console.log('this alone', this); you'll get this in your console: [object Window].
+        </p>
+        <figure>
+            <figcaption style="font-size: 19px;">what a window looks like when called:</figcaption>
+        <img class="image" src="/this.window.png">
+    </figure>
+    </dd>
+</dt>
+<dt>
+    <dl style="font-weight: bolder;">How to Call this in an Object Method</dl>
+    <dd>
+        <p>If THIS is called  within an object method, like in the following example:
+        </p>
+        <ul style="background-color: rgba(0,0,0,0.7); padding: 10px 10px; border-radius: 10px 10px; width: fit-content; ">
+            <li style="font-size: 13px; list-style: none;">const person = { <br>
+                &NonBreakingSpace;&NonBreakingSpace;  firstName: "John", <br>
+                &NonBreakingSpace;&NonBreakingSpace;   lastName : "Doe", <br>
+                &NonBreakingSpace;&NonBreakingSpace; id       : 5566, <br>
+                &NonBreakingSpace;&NonBreakingSpace;  getFullname : function() { <br>
+                    &NonBreakingSpace;&NonBreakingSpace; &NonBreakingSpace;&NonBreakingSpace;  return this.name + '' + this.lastname; <br>
+              &NonBreakingSpace;&NonBreakingSpace;  } <br>
+            }; &NonBreakingSpace;<br>
+            <br>
+            console.log('this in object  method', person.getFullname());</li>
+        </ul>
+    </dd>
+</dt>
+<dt>
+    <dl style="font-weight: bolder;">How to Call THIS in a Function</dl>
+    <dd>
+        <p>If we call this within a function like in the following example:
+            <ul style="background-color: rgba(0,0,0,0.7); padding: 10px 10px;       border-radius: 10px 10px; width: fit-content; font-size: 18px;">
+                <li style="list-style: none; font-size: 13px;">
+                    function &NonBreakingSpace;test( ) &NonBreakingSpace;&NonBreakingSpace;{ <br>
+                        &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;console.log('this in a function', this); <br>
+                    }&NonBreakingSpace;&NonBreakingSpace; <br>
+                    <br>
+                    <br>
+                    test( ) <br>
+                </li>
+            </ul>
+        </p>
+    </dd>
+    <p><b>A note about arrow function</b></p>
+    <ul>
+        <li style="list-style: none;" >In arrow functions, JavaScript sets the this lexically. This means that the arrow function doesn't create its own execution context but inherits the this from the outer function where the arrow function is defined. <mark>In most cases, this means this will refer to the window object as well:</mark> <br>
+        <br>
+        <i>It's important to notice this because, for example, if we try to implement an arrow function to it as an object method, we won't be able to access the object through the this keyword</i>
+        </li>
+    </ul>
+    <p><b>A note about strict-mode</b></p>
+    <ul>
+        <li style="list-style: none;">When using strict-mode, calling this within a function will return <mark>undefined</mark>
+            <br>
+            <br>
+        <ul>
+            <li style="border-left: 3px solid white; padding-left: 10px; list-style: none;">JavaScript's strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicitly opting-out of "sloppy mode". Strict mode isn't just a subset: it intentionally has different semantics from normal code.</li>
+        </ul>
+        <p>Strict mode makes several changes to regular JavaScript semantics:</p>
+        <ul>
+            <li>Eliminates some JavaScript silent errors by changing them to throw errors.</li>
+            <li>Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.</li>
+            <li>Prohibits some syntax likely to be defined in future versions of ECMAScript.</li>
+        </ul>
+    </li>
+    </ul>
+</dt>
+<dt>
+    <dl
+     style="font-weight: bolder;">How to Use this in an Event Listener</dl>
+     <dd>When using THIS in an event listener, THIS will refer to the DOM element that fired the event.</dd>
+</dt>
+<dt>
+    <dl style="font-weight: bolder;">THIS Methods</dl>
+    <dd>
+        <p>THIS method are as follow:</p>
+        <ul>
+            <li style="list-style: none;">
+                <ul>
+                    <li>apply()</li>
+                    <li>bind()</li>
+                    <li>call()</li>
+                </ul>
+            </li>
+        </ul>
+    </dd>
+</dt>
+<script src="lesson 47.js"></script>
 </body>
 </html>

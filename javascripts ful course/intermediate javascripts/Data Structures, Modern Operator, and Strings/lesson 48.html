@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTRUCTURING ARRAY</title>
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: center;
+            color: white;
+            min-height: 100vh;
+            min-width: 500px;
+            font-size: 22px;
+
+        }
+        .array {
+            width: 50%;
+            padding: 20px 20px;
+            border-radius: 10px 10px;
+            background-color: rgba(2, 0, 36, 0.5);
+            font-size: 17px;
+        }
+        @media (max-width: 500px) {
+            body {
+                font-size: 10px;
+                min-width: 300px;
+            }
+        }
+    </style>
+    <h1><center>DESTRUCTURING ARRAY</center></h1>
+    <p>Destructuring the array in JavaScript simply means extracting multiple values from data stored in objects and arrays. The destructing assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+    </p>
+    <p>A value can be extracted from an array and asssigned them into a different variables. Array destructing JavaScript is also used to assign and declare a variable. For destructing an array, the index value of that particular array.</p>
+    <h3><u>What is Destructuring?</u></h3>
+    <p>Destructuring is the method of breaking down array into simple fragment which can be used to assign a new variable. These fragments can be easily accessed and can be referenced by the variables. The destructuring of the array totally depends upon the coder and how much he wants to destroy or destruct the given array.</p>
+    <script src="lesson 48.js"></script>
+    <dt>
+        <dl><b style="font-size: 30px;">Syntax:</b></dl>
+        <dd>
+            <ul>
+                <li><b style="font-size: 27px;">Array destructuring:</b>
+                    <p class="array">var a, b; <br>
+                        [a, b] = [5, 10]; <br>
+                        console.log(a); // 5 <br>
+                        console.log(b); // 10
+                        </p>
+                </li>
+                <li><b style="font-size: 27px;">Destructuring Returned Arrays:</b>
+                <p>
+                    Those function that uses Array destructuring and returns an array makes an array functionality easy because the returned value will be a more accurate value.
+                </p>
+                <p class="array">
+                    function contestants(){ <br>
+                        return ["contestant_1", "contestant_2", "contestant_3"];
+                    } <br>
+                    <br>
+                    var [a, b, c] = contestants(); <br>
+                    console.log(a); //Output: contestant_1 <br>
+                    console.log(b); //Output: contestant_2 <br>
+                    console.log(c); // Output: contestant_3                    
+                </p>
+            
+            </li>
+            <li><b style="font-size: 27px;">Default Value:</b>
+                <p>A default value can be assigned to a variable using array destructuring JavaScript if there is not any value or an <i>undefined</i> values is passed to the variable.</p>
+                <b>Syntax:</b>
+                <p class="array">var x, y; <br>
+                    [x = 25, y = 5] = []; <br>
+                    console.log(x); //Output: 25 <br>
+                    console.log(y); //Output: 5 <br>
+                    
+                    [x = 25, y = 5] = [1, 23]; <br>
+                    console.log(x); //Output: 1 <br>
+                    console.log(y); //Output: 23 <br>
+                    </p>
+            </li>
+            <li>
+                <b style="font-size: 27px;">Ignoring Some Values:</b>
+                <p>Some parts of an array that are not needed can be can ignored. In array destructuring JavaScript, skipping these elements of array helps concentrate on a particular part of code that are of interest. Unwanted elements can be skipped by using a trailing comma with that element.</p>
+                <p class="array">
+                    var a, b; <br>
+                [a, , b] = ["Person_1", "Person_2", "Person_3"];
+                <br>
+                <br>
+                console.log(a); //Output: Person_1 <br>
+                console.log(b); //Output: Person_2 <br>
+                </p>
+            </li>
+            <li>
+                <b style="font-size: 27px;">Interchanging or Swapping Variables</b>
+                <p>Array destructuring can also be used for Interchanging or swapping variables in JavaScript</p>
+                <p class="array">
+                    var x, y; <br>
+                    [x, y] = ["Boy", "Girl"];<br>
+                    [x, y] = [y, x]; <br>
+                    <br>
+                    <br>
+                    console.log(x); //Output: Girl <br>
+                    console.log(y); //Output: Boy <br>
+                </p>
+            </li>
+            <li><b style="font-size: 27px;">Nested Array Destructuring:</b>
+            <p>
+                In array destructuring JavaScript, It doesn't only work for destructing an object or element of an array, but can also be nested destruction. But for doing nested destructuring, the item should also be an array so that it can be assigned to local variables.
+            </p>
+            <p class="array">
+                var numbers = [5, [2, 3, 4], 12, 14]; <br>
+                var  [a, [x, y, z]] = numbers;
+                <br>
+                <br>
+                console.log(x); // Output: 2 <br>
+                console.log(y); // Output: 3 <br>
+                console.log(z); // Output: 4 <br>
+            </p>
+        </li>
+        <li>
+            <b style="font-size: 27px;">Multiple Array Destructuring</b>
+            <p>Array can be destructured multiple times in the same code.</p>
+            <p class="array">
+                var places = ["first", "second", "third", "fourth"]; <br>
+                var [x, y, , z] = [a, ...rest] = places; <br>
+                <br>
+                console.log(x); //Output: first <br>
+                console.log(y); //Output: fourth <br>
+                console.log(z); //Output: first <br>
+                console.log(rest); //Output: ["second", "third", "fourth"]
+            </p>
+        </li>
+            </ul>
+        </dd>
+    </dt>
+    <h4>Conclusion:</h4>
+    <ul>
+        <li>Array destructuring in JavaScript is a method of breaking down an array into simplier array fragments.</li>
+        <li>These fragment of an array can be used to assign it to a new variable.</li>
+        <li>By doing array destructuring in JavaScript, many tasks can be performed such as swapping the values and nested and multiple arrays destructure.</li>
+        <li>The array destructuring feature comes after the ES6 update in JavaScript.</li>
+        <li>Array destructuring in JavaScript is almost supported in all modern browsers accept "Internet Explorer"</li>
+    </ul>
+
+    <fieldset>
+        <legend><b>EXERCISE</b></legend>
+        <ul>
+            <li>
+                <p>Below is the nested <b>ratings</b> array that contains two other arrays. Destructure the nested <b>ratings</b> arrays into two variables called <b>rating</b> and <b>ratingsCount</b>. In the result of your destructuring, the <b>ratings</b> variable should store a number 4.19, and the <b>ratingsCount</b> variable should store a number 144584.</p>
+                <p class="array">
+                    const ratings = [['rating', 4.19], ['ratingsCount', 144589]]; 
+                </p>
+            </li>
+            <li>
+                <p>Below is the <b>ratingStars</b> array. Destructure it into three variables called <b>fiveStarRatings</b>, <b>oneStarRatings</b> and <b>threeStarRatings.</b> Assign the <b>threeStarRatings</b> variable with a default value of 0.</p>
+            </li>
+        </ul>
+    </fieldset>
+    <script src="assign 48.js"></script>
+</body>
+</html>

@@ -3,10 +3,21 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    font-size: 45px;
-    text-transform: capitalize;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   font-size: 22px;
+    min-width: 500px; 
+}
+ul li {
+    margin: 10px;
+}
+@media screen and (max-width: 769px) {
+    body {
+        background-image: radial-gradient(red, blue);
+        font-size: 15px;
+        color: yellow;
+         min-width: 300px;
+    }
+    ul li {
+        margin: none;
+    }
+    
 }

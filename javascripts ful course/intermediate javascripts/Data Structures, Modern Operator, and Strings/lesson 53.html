@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+        font-size: 25px;
+      }
+      h1 {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul li, ol li {
+            margin-bottom: 10px;
+        }
+        ul li ul {
+            background-color: rgba(2, 0, 36, 0.7);
+            font-size: 20px;
+            padding: 15px 15px;
+            border-radius: 8px 8px;
+        }
+        ul li ul li {
+            word-spacing: 5px;
+        }
+        span {
+            color: royalblue;
+        }
+        fieldset {
+            margin-top: 4rem;
+        }
+        @media (max-width: 700px) {
+            html {
+                font-size: 76.5%;
+            }
+            body {
+                min-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>THE LOGICAL ASSIGNMENT OPERATOR</h1>
+    <fieldset>
+        <legend>EXERCISE AND CODING CHALLENGE</legend>
+        <h3>EXERCISE</h3>
+        <ul>
+            <li>Some of the <b>book</b> objects from the <b>books</b> array are missing the edition property. Loop over the <b>books</b> array, and assign this property with a number 1 (if it doesn't already exist). Use logical assignment operators.</li>
+            <li>Some of the <b>book</b> objects from the books array have the <b>highlighted</b> property, which by default is set to true. Iterate over the <b>books</b> array, and if the <b>thirdParty.goodreads.rating</b> property is less than <b>4.2,</b> reassign it with false.</li>
+            <p>Use the &&= operator (tip: you may also need the ! operator)</p>
+        </ul>
+        <ol>
+           <li>Create one player array for each team (variables 'players1' and'players2')</li> 
+            <li>The first player in any player array is the goalkeeper and the others are field players. For Bayern Munich (team 1) create one variable ('gk') with the goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10 field players</li>
+            <li>Create an array 'allPlayers' containing all players of both teams (22 players)</li>
+            <li>During the game, Bayern Munich (team 1) used 3 substitute players. So create a new array ('players1Final') containing all the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'</li>
+             <li>. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')</li>
+            <li>Write a function ('printGoals') that receives an arbitrary number of player names (not an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)</li>
+            <li>The team with the lower odd is more likely to win. Print to the console which team is more likely to win, without using an if/else statement or the ternary operator.</li>
+        </ol>
+        <p><b>Test data for 6.</b>: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
+            Then, call the function again with players from game.scored</p>
+    </fieldset>
+    <script src="assign 53.js"></script>
+</body>
+</html>

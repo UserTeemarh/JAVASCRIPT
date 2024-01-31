@@ -7,59 +7,59 @@
     <title>Execution Context and the Call Stack</title>
 </head>
 <body>
+    <h1><center>EXECUTION CONTEXT AND THE CALL STACK</center></h1>
+    <main>
+    <section>
+        <h2><u>What is Execution Context?</u></h2>
+        <p>The execution context is a fundamental concept in JavaScript that defines the environment in which code is executed.  It contains information about the variables, functions, and parameters defined in that environment, as well as the scope chain and the this keyword.</p>
+        <p>When the JavaScript engine scans a script file, it makes an environment called the Execution Context that handles the entire transformation and execution of the code.</p>
+        <p>During the context runtime, the parser parses the source code and allocates memory for the variables and functions. The source code is generated and gets executed.</p>
+        <p>There are two types of execution contexts: global and function. The global execution context is created when a JavaScript script first starts to run, and it represents the global scope in JavaScript. A function execution context is created whenever a function is called, representing the function's local scope.</p>
 
-    <h1><center>execution context and the call stack</center></h1>
-    <dt>
-        <dl><b>what is the execution context?</b></dl>
-        <dd>when the javascript engine scans a script file, it makes an environment called the <b>execution context</b> that handles the entire transformation and execution of the code.</dd>
-        <dd>during the context runtime, the parser parses the source code and allocates memory for the variables and functions. the source code is generated and gets executed.</dd>
-        <dd><mark>there are two types of executioncontexts: <b>global</b> and <b>function</b> the global execution context is created when a javascripts scripts first starts to run, and it represent the global scope in javascript. a function execution context is created whenever a function is called, representing the function's local scope.</mark></dd>
-    </dt>
-    <h3>phases of the javascripts execution context</h3> 
-    <p>there are two types phases of javascript execution context:</p>
-    <ol>
-        <li><b>creation phase:</b> in this phase, the javascript engine creates the execution context and sets up the script's environment. it determines the values of variables and functions and sets up the scope chain for the execution context.</li>
-        <li><b>execution phase:</b> in this phase, thejavascripts engine executes the code in the execution context. it processes any statements or expressions in the script and evalutates any function calls.</li>
-    </ol>
-    <h5><center>execution context explanation in picture</center></h5>
-    <div class="image">
-        <img src="execution context 1.png">
-        <img src="execution context 2.png">
-        <img src="execution context 3.png">
-        <img src="execution context -4.png">
-        <img src="execution context-5.png">
-        <img src="execution context -6.png">
-        <img src="context execution 7.png">
+        <h3>Phases of the Javascript Execution context</h3>
+        <i>There are two phases of JavaScript execution context:</i>
+        <ul>
+            <li><b>Creation Phase:</b> &NonBreakingSpace; In this phase, the JavaScript engine creates the execution context and sets up the script's environment. It determines the values of variables and functions and sets up the scope chain for the execution context.</li>
+            <li><b>Execution Phase:</b> &NonBreakingSpace; In this phase, the JavaScript engine executes the code in the execution context. It processes any statements or expressions in the script and evaluates any function calls.</li>
+        </ul>
+        <dt>
+            <dl><b>Creation Phase:</b></dl>
+            <dd>During this phase, the JavaScript engine creates the following:</dd>
+            <dd>
+                <ul>
+                    <li><b>The Variable Object (VO):</b> The VO contains all the variables and functions that defined in the current scope. This includes function arguments, function declarations, variable declarations. The VO is used to resolve identifiers to their values during execution.</li>
+                    <li><b>The Scope Chain:</b> The Scope Chain is a list of Variable Objects that are accesible in the current scope. Each Variable Object in the Scope Chain represents a higher level of scope.</li>
+                    <li><b>The "this" keyword:</b> The "this" keyword is set to the value of the value of the "this" object. </li>
+                </ul>
+            </dd>
+        </dt>
+        <dt>
+            <dl><b>Execution Phase:</b></dl>
+            <dd>In this phase, the JavaScript engine executes the code line by line. The JavaScript engine reads the code and executes it one line at a sime. This phase involves the following steps:</dd>
+            <dd>
+                <ul>
+                    <li><b>Assigning Values to Variables:</b> During the execution phase, the JavaScript engine assigns values to variables. If a variable is not initialised, it has the value of 'undefined'. </li>
+                    <li><b>Executing Functions and Code Blocks:</b> The JavaScript engine executes functions and code blocks as it encounters them in the code. If a function is called, the engine creates a new execution context for that function and adds it to the call stack</li>
+                    <li><b>Managing the Call Stack:</b> The call stack is a data structure that keeps track of the functions that are being executed. When a function is called, its execution context is added to the top of the call stack. When the function returns, its execution context is removed from the stack.</li>
+                </ul>
+            </dd>
+        </dt>
 
-    </div>
-    <h5><center>execution context detailed explanation in picture</center></h5>
-    <div class="image">
-        <img src="execution context detailed 2.png" >
-        <img src="execution context detailed 3.png" >
-        <img src="execution context detailed 4.png" >
-        <img src="execution context detailed 5.png" >
-        <img src="execution context detailed 6.png" >
-        <img src="execution context detailed 1.png" >
-    </div>
-    <h2><center>the call stack</center></h2>
-    <dt>
-        <dl><b>what is the call stack?</b></dl>
-        <dd>to keep the track of all the contexts, including global and funtional, the javascript engine uses a <b>call stack</b> <mark>a call stack is also known as an 'execution context stack', 'runtime stack', or 'Machine stack'.</mark></dd>
-        <dd><mark>it uses the LIFO principle (last-in-first-out). when the engine first starts executing the script, it creates a global context and pushes it on the stack.</mark> whenever a function is invoked, similarly, the JS engine creates a function stack context for the function and pushes it to the top of the call stack and starts executing if.</dd>
-        <dd>when execution of the current function is complete, then the javascript engine will automatically remove the context form the call stack and  goes back to its parent</dd>
-    </dt>
-    <h5><center>call stack explanation in picture</center></h5>
-    <div class="image">
-        <img src="call stack (1).png" alt="">
-        <img src="call stack (2).png" alt="">
-        <img src="call stack (3).png" alt="">
-        <img src="call stack (4).png" alt="">
-        <img src="call stack (5).png" alt="">
-        <img src="call stack (6).png" alt="">
-        <img src="call stack (7).png" alt="">
-        <img src="call stack (8).png" alt="">
-        <img src="call stack (9).png" alt="">
-        <img src="call stack (10).png" alt="">
-    </div>
+    </section>
+
+    <section>
+        <h2><u>The Call Stack:</u></h2>
+        <p>A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions — what function is currently being run and what functions are called from within that function.</p>
+        <ul>
+            <li>When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.</li>
+            <li>Any functions that are called by that are added to the call stack further up, and run where their calls are reached.</li>
+            <li>When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.</li>
+            <li>If the stack takes up more space than it was assigned, a "stack overflow" error is thrown.</li>
+        </ul>
+
+    </section>
+    </main>
+ 
+<script src="lesson 43.js"></script>
 </body>
 </html>

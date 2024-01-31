@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHORT CIRCUTING</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 130.6%;
+        }
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(7, 58, 68) 100%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: center;
+            color: white;
+            min-height: 100vh;
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        .array {
+            width: 50%;
+            padding: 20px 20px;
+            border-radius: 10px 10px;
+            background-color: rgba(2, 0, 36, 0.5);
+            font-size: 17px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul li {
+            margin: 10px 10px;
+        }
+        ul li ul {
+            background-color: rgba(2, 0, 36, 0.7);
+            font-size: 20px;
+            padding: 15px 15px;
+            border-radius: 8px 8px;
+        }
+        ul li ul li {
+            word-spacing: 5px;
+        }
+        span {
+            color: royalblue;
+        }
+        @media (max-width: 700px) {
+            html {
+                font-size: 76.5%;
+            }
+            body {
+                min-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>SHORT CIRCUTING (&& and ||) AND THE NULLISH COALESCING OPERATOR (??)</h1>
+    <p>Short-circuiting is a behavior exhibited by logical operators <small>(&&, ||)</small> where the evaluation of the second operand is skipped if the outcome can be determined by evaluating the first operand alone.</p>
+    <p><b>In other words:</b> Short Circuiting refers to the behavior where logical operators <small>(&&, ||)</small> don't evaluate their second operand if the result can be determined from the first operand alone.</p>
+    <h2><u>The <small>&&</small> Operator</u></h2>
+    <p>The <small>&&</small> operator performs a logical AND operation. When used in Short-circuiting, If the first operand evaluates to false, the entire expression evaluates to false without evaluating the second operand. This is because if one operand is false regardless of the value of the second operand. This behaviour is usesful for the conditional statements and can help improve performance by avoiding unnecessary evaluations.</p>
+    <ul>
+        <li><b>The <small>&&</small> Operator Syntax:</b>
+        <ul>
+            <li>const value = 0; <br>
+                const result = value && 'Truthy Value'; <br> <br>
+                console.log(result);&NonBreakingSpace; <span>// Output: 0</span>
+                </li>
+        </ul></li>
+    </ul>
+    <!-- THE OR OPERATOR -->
+    <h2><u>The <small>||</small> Operator:</u></h2>
+    <p>The || operator performs a logical OR operation. When used in Short-circuiting, If the first operand evaluates to true, the entire expression evaluates to true without evaluating the second operand. This is because if one operand is true, the entire expression will always be true regardless of the value of the second operand.  </p>
+    <ul>
+        <li><b>The <small>||</small> Operator Syntax:</b>
+        <ul>
+            <li>const name = '';<br>
+                const displayName = name || 'Guest';<br> <br>
+                console.log(displayName); <span> // Output: Guest;</span>
+                </li>
+        </ul></li>
+    </ul>
+    <h2><u>The Nullish Coalescing Operator:</u></h2>
+    <p>The <small>nullish coalescing operator</small>(??)  is a relatively new addition to Javascript. It provides  a way to provide a default value when accessing properties that may potentially be <b>null</b> or <b>undefined.</b></p>
+    <h3>How It Works:</h3>
+    <ol>
+        <li>If the left operand is null or undefined, it returns the right operand.</li>
+        <li>Otherwise, it returns the left operand.</li>
+    </ol>
+
+    <ul>
+        <li><b>The Nullish Coalescing Operator:</b>
+        <ul>
+            <li>const foo = null ?? 'default string'; <br>
+                console.log(foo);
+                <span>// Expected output: "default string"</span>
+                <br>
+                <br>
+                const baz = 0 ?? 42; <br>
+                console.log(baz); <br>
+                <span>// Expected output: 0</span>
+                </li>
+        </ul></li>
+    </ul>
+
+    <!-- EXERCISE -->
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>
+             <p>Some of the <small>book</small> objects have the <b>programmingLanguage</b> property, which specifies what programming language is used in the book.</p>   
+            <p>Write a function called hasExamplesInJava that takes a book object from the books array as an argument. This function should return true if the book uses Java, or a string 'no data available' if it uses other language or no programming language at all. USE SHORT CIRCUITING</p>
+        </li>
+            <li>
+                <p>Some of the book objects have the onlineContent property, which is either true or false. Loop over the books array, and for the books that provide online content, log to the console a string in this format: "${title}" provides online content. USE SHORT CIRCUITING.</p>
+            </li>
+        </ul>
+        <h3><u>The Nullish Operator</u></h3>
+        <ul>
+            <li>
+                <p>There are objects in the <b>books</b> array that don't have the <b>onlineContent</b> property at all. Loop over the <b>books</b> array, and log a string to the console in this format: <small> "${title}" provides no data about its online content</small>.</p>
+            </li>
+        </ul>
+    </fieldset>
+    <!-- <script src="lesson 52.js"></script> -->
+    <script src="assign 52.js"></script>
+</body>
+</html>

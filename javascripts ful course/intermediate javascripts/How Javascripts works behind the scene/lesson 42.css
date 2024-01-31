@@ -3,57 +3,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    text-transform: capitalize;
-    font-size: 25px;
-}
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.show {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 300px;
-    
-}
-button {
-    background: transparent;
-    outline: none;
-    position: static;
     font-size: 20px;
-    color: white;
-    outline: none;
-    border: 2px solid #123004;
-    padding: 10px;
-    box-shadow: 0 1.5rem 7rem rgba(24, 23, 23, 0.54);
+    font-weight: 100;
 }
 img {
-    border: 3px solid black;
-    position: relative;
-    z-index: 2;
-    width: 500px;
-    height: 270px;
+    width: 520px;
+    height: 300px;
 }
-.hidden {
-    display: none;
-}
-.intercom {
-    margin: 20px;
-    background: none;
-}
-.just {
-    margin: 20px
-}
-
-.jtime {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+figcaption {
+    font-size: 15px;
 }

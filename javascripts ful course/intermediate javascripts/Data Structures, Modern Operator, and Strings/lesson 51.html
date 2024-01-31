@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST PATTERN AND PARAMETERS</title>    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(7, 58, 68) 100%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: center;
+            color: white;
+            min-height: 100vh;
+            font-size: 22px;
+
+        }
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+        .array {
+            width: 50%;
+            padding: 20px 20px;
+            border-radius: 10px 10px;
+            background-color: rgba(2, 0, 36, 0.5);
+            font-size: 17px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul li {
+            margin: 10px 10px;
+        }
+        ul li ul {
+            background-color: rgba(2, 0, 36, 0.7);
+            font-size: 20px;
+            padding: 15px 15px;
+            border-radius: 8px 8px;
+        }
+        span {
+            color: royalblue;
+        }
+        @media (max-width: 700px) {
+            body {
+                font-size: 20px;
+                min-width: 300px;
+            }
+            h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><center>REST PATTERN AND PARAMETERS</center></h1>
+    <h2>1. <u>REST PATTERN</u></h2>
+    <p>The <small>rest pattern</small> is used in destructuring assignments to collect the remaining properties of an object or elements of an array into a new variable. It's similar to rest parameters, but used in a destructuring context.</p>
+    <p>The <small>rest pattern</small> is used to gather remaining elements of an iterable (like an array or an object) into a single variable. It's represented by an ellipsis (...) follwed by the variable name and can be used in array destructuring, or object destructuring. This pattern provides concise way to handle variable-length argument lists or to extract and operate on subsets of data. </p>
+    <h3>Rest Pattern Syntax:</h3>
+    <ul>
+        <li><b>Rest pattern in object destructuring:</b>
+        <ul>
+            <li>const {property1, property2, ...rest} = object;</li>
+        </ul></li>
+        <li><b>Rest Pattern in Array Destructuring:</b>
+        <ul>
+            <li>const [element1, element2, ...rest] = array;</li>
+        </ul></li>
+    </ul>
+    <p>In both cases, The <small>rest pattern</small> is denoted by three dots (...) followed by the variable name where the remaining properties or elements will be collected.</p>
+    <h4>Rest Pattern Pros:</h4>
+    <ul>
+        <li><b>Destructuring:</b> Allows for selective extraction of properties of elements from an object or array, providing more granular control over data manipulation. </li>
+        <li><b>Alias Properties:</b> Enables remaining properties during destructuring, providing flexibility in naming conventions.</li>
+        <li><b>Selective Extraction:</b> Can be combined with other destructuring features like default values and nested destructuring to extract and handle data more precisely.</li>
+    </ul>
+    <h4>Rest Pattern Cons:</h4>
+    <ul>
+        <li><b>Complexity:</b> May introduce complexity, especially when dealing with deeply nested objects or arrays.</li>
+        <li><b>Learning Curve:</b> Requires understanding of destructuring syntax and concepts, which might be challenging fo beginners.</li>
+        <li><b>Potential Bugs:</b> Incorrect usage of rest patterns could lead to unexpected behaviour or errors, particularly in cases where destructuring is not done correctly.</li>
+    </ul>
+
+    <h2>2. <u>REST PARAMETER</u></h2>
+    <p>The <small>rest parameter</small> is a feature that allows a function to accept an indefinite number of arguments as an array. It's denoted by an ellipsis (...) followed by the name of the array that will contain the rest of the parameters passed to the function.</p>
+    <p>The <small>rest parameter</small> must be the last parameter in the function's parameter list, and it collects all the remaining arguments into an array. This allows functions to accept any number of argument without explicitly specifying them in the function definition.</p>
+    <h3>Rest Parameter Syntax:</h3>
+    <p>The syntax for the <small>rest parameter</small> is an ellipsis (...) followed by the name of the parameter that will hold the rest of the arguments as an array.</p>
+    <ul>
+        <li><b>Basic Syntax:</b>
+        <ul>
+            <li>funtion functionName(...restParameter) {
+                <br>
+                <br> <span>// function body</span> }
+            </li>
+        </ul></li>
+    </ul>
+    <h4>Rest Parameter Pros:</h4>
+    <ul>
+        <li><b>Flexibility:</b> Allows functions to accept an indefinite number of arguments, making them more versatile.</li>
+        <li><b>Simplicity:</b> Proides a concise syntax for collecting multiple arguments into an array, simplifying function definitions.</li>
+        <li><b>Avoid Arguments Object:</b> Offers a modern alternative to the deprecated <small>arguments object,</small> which can be less intuitive to work with.</li>
+    </ul>
+    <h4>Rest Parameter Cons:</h4>
+    <ul>
+        <li><b>Order:</b> Must be the last parameter in the function's parameter list, limiting its position within the parameter list.</li>
+        <li><b>Array Only:</b> Can only collect argument into an array, which might not be suitable for all use cases where other data strucutures are needed. </li>
+    </ul>
+    <fieldset>
+        <legend>Exercise</legend>
+        <ul>
+            <li><p>Destructure the <small>keywords</small> property (array) of the first book from the <small>books</small> array into variables called <small>mainKeyword and rest</small>. The first keyword should be assigned to <small>mainKeyword,</small> and the rest of the <small>keywords</small> should be assigned to the <small>rest</small> variable (it should be an array).</p>
+            </li>
+            <li>
+                <p>Destructure the second book from the <small>books</small> array into a variable called <small>bookPublisher.</small> The <small>bookPublisher</small> variable should be assigned with the value of the <small>publisher</small> property of the book object. Assign the rest of the properties to the <small>restOfTheBook</small> variable.</p>
+            </li>
+            <li>
+                <p>Write a function called <small>printBookAuthorsCount</small> that has two parameters called <small>title</small> and <small>authors.</small> The <small>authors</small> parameter should accept any number of arguments. This function should log to the console a string formatted like that: <span> "The book "${title}" has ${authors.length} authors".</span></p>
+            </li>
+        </ul>
+    </fieldset>
+    <script src="lesson 51.js"></script>
+    <script src="assign 51.js"></script>
+</body>
+</html>
