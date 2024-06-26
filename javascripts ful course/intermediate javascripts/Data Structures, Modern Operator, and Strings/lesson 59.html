@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORKING WITH STRINGS</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          textarea {
+            background-color: #115f46;
+            outline: none;
+            width: 500px;
+            height: 300px;
+            color: white;
+            font-size: 20px;
+          }
+          button {
+            background-color: #f7f7f7;
+            width: 150px;
+            height: 50px;
+            color: #115f46;
+            font-size: 20px;
+            position: relative;
+            bottom: 5rem;
+          }
+          h1 {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            .margin-paragraph {
+                margin-left: 5rem;
+            }
+            ul li, ol li {
+                margin-bottom: 10px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #7fceb5;
+            }
+            fieldset {
+                margin-top: 3rem;
+                border: 3px solid #115f46;
+                margin-bottom: 10px;
+            }
+            table, thead, th,  tbody, td {
+                border: 1px solid #115f46;
+                padding: 10px 10px;
+            }
+            .p-border {
+                border-left: 2px solid #115f46;
+                padding-left: 20px;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>WORKING WITH STRINGS</h1>
+    <p>A string is a sequence of characters intended to represent text. Strings can contain any kind of character, like letters, numbers, or special characters.</p>
+    <h2><u>The Basics of Strings in JavaScript
+    </u></h2>
+    <p class="p-border">In JavaScript, a string is a data type representing a sequence of characters that may consist of letters, numbers, symbols, words, or sentences.
+    </p>
+    <h3><u>How to create strings in JavaScript
+    </u></h3>
+    <p>In JavaScript, you can create strings by wrapping the text inside single quotes ('), double quotes ("), or backticks (`)</p>
+    <ul>
+        <li>
+            <ul>
+                <li><span>// A string created using single quotes</span><br>
+                    let string1 = 'I am a very cool string! 😎';<br>
+                    <br>
+                   <span> // A string created using double quotes</span><br>
+                    let string2 = "I am a very cool string! 😎";<br>
+                    <br>
+                    <span>// A string created using backticks, also known as template literal</span>
+                    let string3 = `I am a very cool string! 😎`;</li>
+            </ul>
+        </li>
+    </ul>
+    <p>A string created using <strong>backticks</strong> are also known as <strong>template literals</strong> and possess special features.</p>
+    <p>A string created using single quotes, double quotes, or backticks is generated as a primitive value, similar to numbers and boolean values. Primitive data are immutable, which means they cannot be changed. Also, they do not have any methods or properties.</p>
+    <p>There is another way to create strings in JavaScript, which is via the <em>String() constructor.</em> The String() constructor generates a string as an object (when called with new).
+    </p>
+    <!-- BASIC STRING MANIPULATION IN JAVASCRIPT -->
+    <h2><u>Basic String Manipulation in JavaScript
+    </u></h2>
+    <table border="3">
+        <thead>
+            <th>BASIC STRING METHOD</th>
+            <th>DESCRIPTION</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>String length</td>
+                <td>The <strong>length</strong> property returns the length of a string</td>
+            </tr>
+            <tr>
+                <td>String charAt()</td>
+                <td> The charAt() method returns the character at a specified index (position) in a strin</td>
+            </tr>
+            <tr>
+                <td>String charCodeAt()</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>String at()</td>
+                <td>The charCodeAt() method returns the Unicode of the character at a specified index (position) in a string</td>
+            </tr>
+            <tr>
+                <td>String []</td>
+                <td>The String object is used to represent and manipulate a sequence of characters.</td>
+            </tr>
+            <tr>
+                <td>String slice()</td>
+                <td>The <strong>slice()</strong> method extracts the text from one string and returns a new string. Changes to the text in one string do not affect the other string</td>
+            </tr>
+            <tr>
+                <td>String substring()</td>
+                <td>The substring() method extracts characters, between two indices (positions), from a string, and returns the substring</td>
+            </tr>
+            <tr>
+                <td>String substr()</td>
+                <td>The substr() method extracts a part of a string. The substr() method begins at a specified position, and returns a specified number of characters.</td>
+            </tr>
+            <tr>
+                <td>String toUpperCase()</td>
+                <td> The toUpperCase() method converts a string to uppercase letters.</td>
+            </tr>
+            <tr>
+                <td>String toLowerCase()</td>
+                <td> The toLowerCase() method returns the value of the string converted to lower case.</td>
+            </tr>
+            <tr>
+                <td>String concat()</td>
+                <td>The concat() method of Array instances is used to merge two or more arrays.</td>
+            </tr>
+            <tr>
+                <td>String trim()</td>
+                <td>The trim() method of String values removes whitespace from both ends of this string and returns a new string, without modifying the original.</td>
+            </tr>
+            <tr>
+                <td>String trimStart()</td>
+                <td>The trimStart() method removes whitespace from the beginning of a string. The trimStart() method does not change the original strin</td>
+            </tr>
+            <tr>
+                <td>String trimEnd()</td>
+                <td>The trimEnd() method removes whitespace from the end of a string. The trimEnd() method does not change the original string.</td>
+            </tr>
+            <tr>
+                <td>String padStart()</td>
+                <td>The padStart() method pads a string from the start. The padStart() method pads a string with another string (multiple times) until it reaches a given length.</td>
+            </tr>
+            <tr>
+                <td>String padEnd()</td>
+                <td>The padEnd() method pads a string with another string (multiple times) until it reaches a given length</td>
+            </tr>
+            <tr>
+                <td>String repeat()</td>
+                <td>The repeat() method returns a string with a number of copies of a string. The repeat() method returns a new string.</td>
+            </tr>
+            <tr>
+                <td>String replace()</td>
+                <td>The replace() method searches a string for a value or a regular expression. The replace() method returns a new string with the value(s) replaced.</td>
+            </tr>
+            <tr>
+                <td>String replaceAll()</td>
+                <td> The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement.</td>
+            </tr>
+            <tr>
+                <td>String split()</td>
+                <td>The split() method of String values takes a pattern and divides this string into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array.</td>
+            </tr>
+        </tbody>
+    </table>
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>Take the ISBN property of the first book from the books array, and log to the console characters at index 6, 4, 9 and 8. Use bracket notation to access individual characters.</li>
+            <li>Below is the quote variable that stores a string. Find the index of the word 'chess', and log it to the console.
+                <ul>
+                    <li>
+                        <span>const quote = 'A computer once beat me at chess, but it was no match for me at kick boxing';</span>
+                    </li>
+                </ul>
+            </li>
+            <li>Extract the word "boxing" from the same quote string, and log it to the console.
+            </li>
+            <li>Some authors are noted as "(Contributor)", for example "Julie Sussman (Contributor)". Create a function called isContributor that takes an author's name as an argument, and returns either true (if he's a contributor) of false (if he's not a contributor). The string "(Contributor)" is always the last part of the author's name string.
+                <ul>
+                    <li><strong>Code:</strong> <br>
+                    <span>isContributor('Julie Sussman (Contributor)');</span></li>
+                </ul>
+            </li>
+
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>
+                <p>Write a function called <strong>normalizeAuthorName</strong> that takes an author's name (string) as an argument, and returns the same string, but the first name and last name are capitalized, and the "(Contributor)" part is removed (if exists).</p>
+                <p>You can be sure that the author's name always consists of two words separated by a space, and possibly ends with "(Contributor)". The string may also contain trailing spaces.</p>
+            </li>
+            <li>
+                <p>Take the title of the second book (books[1]) from the books array, and replace the word "Programs" with "Software". Assign the new string to the newBookTitle variable.</p>
+            </li>
+            <li>
+                <p>Write a function called logBookTheme that takes book's title (string), and logs to the console:</p>
+                <p>"This book is about computers" if the title starts with the word "computer", </p>
+                <p>"This book is about algorithms and data structures" if the title includes both the "algorithms" and "structures" words,</p>
+                <p>and, "This book is about some systems, but definitely not about operating systems" if the title ends with the word "system" or "systems", but doesn't include the word "operating".</p>
+                <ul>
+                    <li>The title may contain both small and capital letters.</li>
+                </ul>
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>
+                <p>Below is the bookCategories variable that stores a string of categories. Each category is separated with a semicolon, for example, in a string "science;computing", 'science' and 'computing' are separate categories.
+                </p>
+                <p>Write a function called logBookCategories that takes a string of categories separated with semicolons, and logs each category to the console (as separate strings).
+                </p>
+                <ul>
+                    <li><span>const bookCategories = 'science;computing;computer science;algorithms;business;operating systems;networking;electronics';</span> <br>
+                        logBookCategories(bookCategories);</li>
+                </ul>
+            </li>
+            <li>
+                <p>Now, the opposite. Each book from the books array has the keywords property.</p>
+                <p>Write a function called getKeywordsAsString that takes the books array as an argument, collects keywords from each book, removes duplicates, and then joins them to create a single string where keywords are separated by a semicolon.</p>
+                <ul>
+                    <li><span>getKeywordsAsString(books);</span></li>
+                </ul>
+            </li>
+            <li>
+                <p>Below is the bookChapters array that contains inner arrays. Each inner array consists of a chapter's title, and the number of a page, for example, in ['The Basics', 14], 'The Basics' is the chapter's title, and 14 is the number of a page.
+                </p>
+                <p>Write a function called logBookChapters that takes an array of arrays (like bookChapters) as an argument, and logs each chapter's name to the console together with the page number. The page number should be separated from the chapter's name with underscores (take a look at the example below).
+                </p>
+                <strong>Use the padEnd method</strong>
+                <ul>
+                    <li>const bookChapters = [['The Basics', 14], ['Sorting', 254], ['Searching', 372], ['Graphs', 526], ['Strings', 706]]; <br>
+                       <span> logBookChapters(bookChapters);</span></li>
+                </ul>
+            </li>
+        </ul>
+        <h4><u>CODING CHALLENGE</u></h4>
+        <p>Write a program that receives a list of variable names written in underscore_case 
+            and convert them to camelCase.
+            The input will come from a textarea inserted into the DOM (see code below to 
+            insert the elements), and conversion will happen when the button is pressed.</p>
+            <p><strong>Test data (pasted to textarea, including spaces):</strong></p>
+            <ul style="list-style: none;">
+            <li>underscore_case</li>
+            <li>first_name</li>
+            <li>Some_Variable</li>
+            <li> calculate_AGE</li>
+            <li>delayed_departure</li>
+        </ul>
+        <p><strong>Should produce this output (5 separate console.log outputs):</strong></p>
+        <ul style="list-style: none;">
+            <li>underscoreCase ✅
+            </li>
+            <li>firstName ✅✅
+            </li>
+            <li>someVariable ✅✅✅
+            </li>
+            <li>calculateAge ✅✅✅✅
+            </li>
+            <li>delayedDeparture ✅✅✅✅✅
+            </li>
+        </ul>
+        <h5>Hints:</h5>
+        <ul>
+            <li>§ Remember which character defines a new line in the textarea �
+            </li>
+            <li>§ The solution only needs to work for a variable made out of 2 words, like a_b
+            </li>
+            <li> Start without worrying about the ✅. Tackle that only after you have the variable name conversion working �</li>
+        </ul>
+    </fieldset>
+    <script src="assign 59.js"></script>
+</body>
+</html>

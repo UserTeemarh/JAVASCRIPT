@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAPS: FUNDAMENTALS AND MAPS: ITERATION</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          h1 {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            .margin-paragraph {
+                margin-left: 5rem;
+            }
+            ul li, ol li {
+                margin-bottom: 10px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #7fceb5;
+            }
+            fieldset {
+            margin-bottom: 10px;
+                border: 2px solid black;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>MAPS IN JAVASCRIPT</h1>
+    <p>A <b>map</b> is a collection of key-value pairs. Unlike regular Javascript Objects, which only allow strings and symbols as keys, a Map allows keys of any type, including objects, functions, and primitives.</p>
+    <h2><u>Key Features Of Map:</u></h2>
+    <ul>
+        <li><b>Any Type of Key:</b> Any type of data type of value as a key can be used. </li> 
+        <li><b>Ordered Entries:</b> Entries in a Map maintain the order of their insertion.</li>
+        <li><b>Size Property:</b> A map has a size property that returns the number of key-value pairs</li>
+        <li><b>Iterability:</b> Map Objects are iterable, meaning iterable is allowed over their key-value pairs.</li>
+    </ul>
+
+    <ul>
+        <li><b>Creating a Map:</b> A map can be created by using the <b>new Map</b> constructor
+        <ul>
+            <li>const myMap = new Map();</li>
+        </ul></li>
+        <li><b>Adding Elements:</b> To add elements to a Map, the <b>set</b> method is used.
+        <ul>
+            <li>myMap.set('Key', 'Value'); <br> myMap.set(1, 'Number') <br> myMap.set(true, 'Boolean');</li>
+        </ul></li>
+        <li><b>Accessing Elements:</b> To access elements in a Map, the <b>get</b> method is used.
+        <ul>
+            <li>myMap.get('Key'); <br> myMap.get(1) <br> myMap.get(true);</li>
+        </ul></li>
+        <li><b>Checking for a Key:</b> To check if a key exists in a Map, the <b>has</b> method is used.
+            <ul>
+                <li>myMap.has('Key'); <br> myMap.has(1) <br> myMap.has(true);</li>
+            </ul></li>
+        <li><b>Removing Elements:</b> To remove an element from a Map, The <b>delete</b> method is used.
+            <ul>
+                <li>myMap.delete('Key');</li>
+            </ul>
+         </li>
+         <li><b>Getting the size of a Map:</b> To get the number of a key-value pairs in a Map, the <b>size</b> property is used.
+            <ul>
+                <li>myMap.size;</li>
+            </ul>
+        </li>
+        <li><b>Iterating Over a Map:</b> To iterate over a Map, <b>for...of</b> loop is used.
+        
+            <ul>
+
+                <li>for (const [key, value] of myMap) { <br>
+                <span>console.log(key, value)</span> }</li>
+            </ul>
+        </li>
+        <li><b>Converting a Map to an Array:</b> To convert a Map to an array, the <b>spread method</b> is used.
+        <ul>
+            <li>const mapArray = [...myMap];</li>
+        </ul></li>
+        <li><b>Clearing a Map:</b> To remove all elements from a Map, the <b>clear</b> method can be used.
+        <ul>
+            <li>myMap.clear();</li>
+        </ul></li>
+    </ul>
+
+    <h3><u>When to Use Map</u></h3>
+    <ol>
+        <li>When a collection of key-value pairs is needed, where keys can be of any type.</li>
+        <li>Developer need to maintain the insertion order  of entries.</li>
+        <li>To enquire efficient operations for adding, deleting, and querying key-value pairs.</li>
+    </ol>
+
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>Create a new book, but this time, as a Map. Assign it to the <b>bookMap</b> variable.</li>
+            <li>Set a new key in <b>bookMap</b> called pages, and assign it with a number 464.
+            </li>
+            <li>Get the <b>title</b> and <b>author</b> values from bookMap, and log to the console a string formatted like that:  <b> "${title} by ${author}"</b>.
+            </li>
+            <li>Get the size of <b>bookMap</b>, and log it to the console.
+            </li>
+            <li>Check if bookMap has the author key. and if so, log <b> "The author of the book is known"</b> to the console.
+            </li>
+        </ul>
+    </fieldset>
+
+
+    <!-- MAPS: ITERATION -->
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>Convert the first <b>book</b> object from the books array into a Map, and assign it to a <b>firstBookMap</b> variable.</li>
+            <li>Use the for-of loop to iterate over <b>firstBookMap</b>, and log to the console keys that have numbers as values.</li>
+        </ul>
+        <h4>CODING CHALLENGE</h4>
+        <p>Let's continue with our football betting app! This time, we have a map called 
+            'gameEvents' (see below) with a log of the events that happened during the 
+            game. The values are the events themselves, and the keys are the minutes in which 
+            each event happened (a football game has 90 minutes plus some extra time)</p>
+            <ul>
+                <li> Create an array <b> 'events'</b> of the different game events that happened (no duplicates)</li>
+                <li>. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.</li>
+                <li> Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)</li>
+                <li> Loop over 'gameEvents' and log each element to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this: <br>
+                <b>[FIRST HALF] 17: ⚽ GOAL</b></li>
+            </ul>
+            <p class="margin-paragraph">
+                <span>
+                    const gameEvents = new Map([ <br>
+                        [17, '⚽ GOAL'],<br>
+                        [36, '� Substitution'],<br>
+                        [47, '⚽ GOAL'],<br>
+                        [61, '� Substitution'],<br>
+                        [64, '� Yellow card'],<br>
+                        [69, '� Red card'],<br>
+                        [70, '� Substitution'],<br>
+                        [72, '� Substitution'],<br>
+                        [76, '⚽ GOAL'],<br>
+                        [80, '⚽ GOAL'],<br>
+                        [92, '� Yellow card'],<br>
+                    ])
+                </span>
+            </p>
+    </fieldset>
+
+    <input class="inputElement" type="text">
+    <button class="btn">submit</button>
+
+    <script src="assign 58.js"></script>
+</body>
+</html>

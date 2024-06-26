@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENHANCED OBJECT LITERALS</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          h1 {
+                color: rgb(58, 58, 10);
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            ul li, ol li {
+                margin-bottom: 10px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #28b487;
+            }
+            fieldset {
+                margin-top: 4rem;
+                border: 2px solid black;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>ENHANCED OBJECT LITERALS</h1>
+    <p>The <small>enhanced object literals</small> provide a more a concise syntax for defining object literals. Thies includes shorthand property names, computed property names, and methods It's a handy feature that makes code cleaner and more readable.</p>
+    <p>These enhancements make working with objects in Javascript more intuitive and efficient.</p>
+    <h2><u>FEATURES OF ENHANCED OBJECT LITERALS</u></h2>
+    <p>Enhanced object literals provide several features that improve the syntax and flexibility of defining objects:</p>
+    <ul>
+        <li><b>Shorthand Property Names:</b> Allows the omittion of the repetition of property names if they match variable names
+        <ul>
+            <li>const x = 1, y = 2; <br> const point = [x, y] <br> <br> <span>// [x: 1, y: 2];</span></li>
+        </ul></li>
+        <li><b>Computed Property Names:</b> Enables dynamic property names using square brackets []. <ul>
+            <li>const key = 'foo'; <br> const obj = { <br> 'bar': [key]; <br> }</li>
+        </ul></li>
+        <li><b>Method Definitions:</b> It is used to define methods within object literals without using the function keyword. <ul>
+            <li>const obj = { <br>
+                foo() {
+                    <span>return bar;</span>
+                }
+            }
+            </li>
+        </ul></li>
+    </ul>
+
+    <p>These features make object literals more expressive and easier to work with in Javascript, enhancing readability and maintainability of code.</p>
+
+    <h3><i>Pros of Enhanced Object Literals:</i></h3>
+    <ul>
+        <li><b>Concise Syntax:</b> Enhanced object literals provide a more concise and readable syntax for defining objects, reducing the amount of boilerplate code needed.</li>
+        <li><b>Improved Readability:</b> By reducing redundancy and providing more intuitive syntax for defining  properties and methods enhanced object literals can enhance code readability and maintainability</li>
+        <li><b>Dynamic Property Names:</b> Computed property names allow for the dynamic creation of property names, which can be useful for creating objects with dynamic keys or using variables as keys.</li>
+        <li><b>Method Definitions:</b> Method definitions inside object literals make it easier to define and manage object behaviour, leading to cleaner and more organized code.</li>
+    </ul>
+    <h3><i>Cons of Enhanced Object Literals:</i></h3>
+    <ul>
+        <li><b>Compability Concerns:</b> While most modern browsers and environment support enhanced object literals, older browsers may not, requiring transpilation or polyfills for compatibility.</li>
+        <li><b>Complexity:</b> While enhanced object literals can improve readability for simple cases, complex uses of computed property names and method definitions might increase the cognitive load for developers, especially those new to Javascript or Object-oriented programming.</li>
+        <li><b>Limited Support for Older Environment:</b> In environment where ES6 features are not fully supported, developers may need to avoid using enhanced object literals or rely on transpilation tools like Babel to ensure compatibility. </li>
+    </ul>
+
+    <fieldset>
+        <legend>EXERCISE:</legend>
+        <ul>
+            <li>
+                <p>Below is the <b>bookData</b> array that contains other arrays. Each inner array consists of the property name (first element), and the value (second element). For example, in ['title', 'Computer Networking: A Top-Down Approach'], 'title' is the property name, and 'Computer Networking: A Top-Down Approach' is meant to be the value assigned to that property name.
+                </p>
+                <p>Using computed properties, fill the newBook object with the properties and values from the bookData array. The first one is done already.
+                </p>
+                <ul>
+                    <li>const bookData = [ <br>
+                        ['title', 'Computer Networking: A Top-Down Approach'], <br>
+                        ['author', ['James F. Kurose', 'Keith W. Ross']], <br>
+                        ['publisher', 'Addison Wesley'], <br>
+                      ];<br>
+                      <br>
+                    <span>  // Do the rest </span> <br>
+                      const newBook = { <br>
+                        [bookData[0][0]]: bookData[0][1] <br>
+                       <span> // ...</span> <br>
+                      };</li>
+                </ul>
+            </li>
+            <li>
+                <p>Below is the <b>pages</b> variable. Add it as a property of the <b> newBook2 </b> object. Use the shorter way.
+                </p>
+                <ul>
+                    <li>const pages = 880; <br>
+                        <br>
+                        const newBook2 = { <br>
+                          title: 'The C Programming Language', <br>
+                          author: ['Brian W. Kernighan', 'Dennis M. Ritchie'], <br>
+                          <span> // ... </span> <br>
+                        }</li>
+                </ul>
+            </li>
+        </ul>
+    </fieldset>
+    <script src="assign 55.js"></script>
+</body>
+</html>

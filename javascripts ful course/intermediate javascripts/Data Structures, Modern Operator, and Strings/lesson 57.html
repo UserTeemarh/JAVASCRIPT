@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETS</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          h1 {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            ul li, ol li {
+                margin-bottom: 10px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #7fceb5;
+            }
+            fieldset {
+            margin-bottom: 10px;
+                border: 2px solid black;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>SETS</h1>  
+    <p>A <b>set</b> is a collection of unique values. This means that a Set can only contain distinct elements, and it automatically removes any duplicates. Sets are particularly useful for storing and managing a collection of unique items.</p>
+    <p>Javascript's Set object provides several features that make it useful data structure for managing collections of unique values.</p>
+    <h3>1. <u>Creating an Empty set Set</u></h3>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set()</li>
+        </ul></li>
+    </ul>   
+    <h3>2. <u>Creating a Set with initial Values</u></h3>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set([1, 2, 3, 4, 5, 6])</li>
+        </ul></li>
+    </ul>   
+    <h3>3. <u>Adding Values</u></h3>
+    <p>To add a new value to <b>Set</b> the <b>add</b> method has to be used.</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set([1, 2, 3, 4, 5, 6]) <br>
+            mySet.add(value) </li>
+        </ul></li>
+    </ul>   
+    <h3>4. <u>Checking for a Value</u></h3>
+    <p>To check if a value exists in Set, the <b>has</b> method has to be used.</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set([1, 2, 3, 4, 5, 6]) <br>
+            mySet.has(value); <span>// true</span> </li>
+        </ul></li>
+    </ul>
+
+    <h3>5. <u>Clearing the Set</u></h3>
+    <p><b>Clearing the Set</b> is the method of removing all the values from the set, to implement that, the <b>clear</b> method has to be used</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set([1, 2, 3, 4, 5, 6]) <br>
+            mySet.has(value) <span>// Set { }</span> </li>
+        </ul></li>
+    </ul>
+    <h3>6. <u>Getting the Size of the  Set</u></h3>
+    <p>Getting the Size of the  Set is the method of checking the length of values in Set. It can be checked by using the <b>size</b> method.</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set([1, 2, 3, 4, 5, 6]) <br>
+            mySet.size<span>// 6</span> </li>
+        </ul></li>
+    </ul>
+
+    <h3>7. <u>Iterating Over a Set</u></h3>
+    <p>Iteration is allowed in Set by using the <b>for...of</b> loop method</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const mySet = new Set([1, 2, 3, 4, 5, 6]) <br>
+            <br> for(const sets of mySet) { <br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; console.log(sets); <br>
+            } </li>
+        </ul></li>
+    </ul>
+
+    <h3>8. <u>Converting Between Sets and Arrays</u></h3>
+    <p>A set can be converted to <i>array</i> and vice and versa.</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const array = [1, 2, 3, 4, 5, 6] <br>
+                const mySet = new Set(array);
+                <br>
+                <br>
+                const newArray = [...mySet]; <br>
+                <span>console.log(newArray);</span> </li>
+        </ul></li>
+    </ul>
+
+    <h2>PROS AND CONS OF SETS</h2>
+    <h4>Pros:</h4>
+    <ol>
+        <li><b>Uniqueness:</b> Ensures all elements are unique, preventing duplicate entries.</li>
+        <li><b>Efficiency:</b> Provides efficient methods for checking for checking existence, adding, and deleting elements, typically with average time complexity of 0(1) for these operations.</li>
+        <li><b>Iteration:</b> Supports easy iteration through elements using methods like <i>for...of</i> loops</li>
+      <li><b>Size Property:</b> Allows quick access to determine the number of elements in the set using the size property.</li>
+      <li><b>Convenience Methods:</b> Includes useful methods like <i>add, delete, has, and clear.</i></li>
+      <li><b>Order of Insertion:</b> Maintains the order of insertion, which can be useful in certain scenarios.
+      </li>
+    </ol>
+
+    <!-- CONS -->
+    <h4>Cons:</h4>
+    <ol>
+        <li><b>Limited Features:</b> Lacks some features found in arrays, such as direct access via indices and many array-specific methods like map, filter, and reduce.
+        </li>
+        <li><b>Weakest Limitations:</b> If using Weakest, it only accepts objects as values and doesn't have methods to iterate or check the size.
+        </li>
+        <li><b>Memory Usage:</b> May use more memory compared to arrays for storing the same number of elements, especially if the elements are primitive values.</li>
+        <li><b>Compatibility:</b> May not be supported in very old Javascript environments, though this is less of an issue with modern browsers and Node.js versions.</li>
+    </ol>
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>
+                <p>Below is the allKeywords variable, which stores an empty array. Loop over the books array, and fill the allKeywords array with the keywords coming from the keywords property of each book object. The allKeywords array should have just one level (no nested arrays).
+                </p>
+                <p>Use whatever loop and methods you want. You can also use the spread syntax. In the end, the allKeywords array should look more or less like this: ['computer science', 'programming', 'algorithms', 'data structures', ...].
+                </p>
+                <ul>
+                    <li>const allKeywords =  [ ];</li>
+                </ul>
+            </li>
+            <li>
+                <p>The allKeyword array contains duplicates. Remove them by creating a Set out of that array. Assign the newly created set to the uniqueKeywords variable.</p>
+            </li>
+            <li>
+                <p>Add two more keywords to the uniqueKeywords set, for example, 'coding' and 'science'.</p>
+            </li>
+            <li>
+                <p>Delete 'business' from the uniqueKeywords set.</p>
+            </li>
+            <li>Create an array out of the uniqueKeywords set, and assign it to the uniqueKeywordsArr variable.</li>
+            <li>Delete all items from the uniqueKeywords set.</li>
+        </ul>
+    </fieldset>    
+    <script src="assign. 57.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOSER LOOK AT FUNCTION:: PART ||</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          textarea {
+            background-color: #115f46;
+            outline: none;
+            width: 500px;
+            height: 300px;
+            color: white;
+            font-size: 20px;
+          }
+          button {
+            background-color: #f7f7f7;
+            width: 150px;
+            height: 50px;
+            color: #115f46;
+            font-size: 20px;
+            position: relative;
+            bottom: 5rem;
+          }
+          h1 {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            ul li, ol li {
+                margin-bottom: 5px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #7fceb5;
+            }
+            fieldset {
+                margin-top: 3rem;
+                border: 3px solid #115f46;
+                margin-bottom: 10px;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>CLOSER LOOK AT FUNCTION:: PART ||</h1>
+    <h2>2. <u>IMMEDIATELY INVOKED FUNCTION EXPRESSION</u></h2>
+    <p>An <strong>IIFE</strong> (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined</p>
+    <p>It is a design pattern which is also known as a Self-Executing Anonymous Function and contains two major parts:</p>
+    <ul>
+        <li>The first is the anonymous function with lexical scope enclosed within the Grouping Operator (). This prevents accessing variables within the IIFE idiom as well as polluting the global scope. </li>
+        <li>The second part creates the immediately invoked function expression () through which the JavaScript engine will directly interpret the function.</li>
+        <li><strong>SYNTAX:</strong>
+        <ul>
+            <li>(function( ){ <br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;<span>console.log('This will  never run again2');</span> <br>
+            })( );</li>
+        </ul></li>
+    </ul>
+
+    <!-- CLOSURES -->
+    <h2>2. <u>CLOSURES</u></h2>
+    <p>A <strong>closure</strong> is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).</p>
+    <p>In other word: <strong>Closures</strong> are functions that have access to the variables that are present in their scope chain even if the outer function ceases to exist.</p>
+    <h4>KeyPoints of Closures:</h4>
+    <ul>
+        <li>Even if the outer function ceases to exist, a closure still has access to its parent variables.</li>
+        <li>Closures do not have access to their outer function’s args parameter.</li>
+        <li> A closure is the closed-over variable environment of the execution context in which a function was created, even after that execution context is gone.</li>
+        <li>A closure gives a function to al the variables of its parent function, even after that parent function has returned. The function keeps a reference to its other scope, which preserves the scope chain throughout time.</li>
+        <li> A closure makes sure that a function doesn't loose connection to variable that existed at the function's birth place.</li>
+        <li><em> A closure is like a backpack that a function carries around wherever it goes. The backpack has all the varibles that were present in the environment where the function was created.</em></li>
+        <li>
+            <strong>SYNTAX:</strong>
+            <ul>
+                <li>
+                    
+                const secureBooking = function(){ <br>
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;let passengerCount = 0;<br>
+                    <br>
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;return function(){ <br>
+                        &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;passengerCount++; <br> <br>
+                        &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;<span>console.log(`${passengerCount} passengers`);</span> <br>
+                        &NonBreakingSpace;&NonBreakingSpace;} <br>
+            } <br>
+            <br>
+                const booker = secureBooking(); <br>
+                booker(); <br>
+                booker(); <br>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Pros of Closures;</h3>
+    <ul>
+        <li>They allow the attachment of variables to an execution context.</li>
+        <li>Variables in closures can help maintain a state of code that is reuseable.</li>
+        <li>They provide data encapsulation.</li>
+        <li>They help remove redundant code.</li>
+        <li>They help maintain modular code.</li>
+    </ul>
+    <h3>Cons of Closures;</h3>
+    <ul>
+        <li>The variables declared inside a closure are not garbage collected.</li>
+        <li>Too many closures can slow down application. This is actually caused by duplication of code in the memory.</li>
+    </ul>
+    <fieldset>
+        <legend><strong>CODING CHALLENGE</strong></legend>
+        <ul>
+            <li>Take the IIFE below and at the end of the function, attach an event listener that 
+                changes the color of the selected h1 element ('header') to blue, each time 
+                the body element is clicked. Do not select the h1 element again!</li>
+            <li>And now explain to yourself (or someone around you) why this worked! Take all 
+                the time you need. Think about when exactly the callback function is executed, 
+                and what that means for the variables involved in this example</li>
+            <li><strong>CODES</strong>
+            <ul>
+                <li>(function ( ) { <br>
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;const header = document.querySelector('h1');<br>
+                    &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;header.style.color = 'red'; <br>
+                    })( )</li>
+            </ul></li>
+        </ul>
+    </fieldset>
+    <script src="lesson 62.js"></script>
+</body>
+</html>

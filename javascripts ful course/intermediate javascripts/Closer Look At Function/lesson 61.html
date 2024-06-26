@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          textarea {
+            background-color: #115f46;
+            outline: none;
+            width: 500px;
+            height: 300px;
+            color: white;
+            font-size: 20px;
+          }
+          button {
+            background-color: #f7f7f7;
+            width: 150px;
+            height: 50px;
+            color: #115f46;
+            font-size: 20px;
+            position: relative;
+            bottom: 5rem;
+          }
+          h1 {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            .margin-paragraph {
+                margin-left: 5rem;
+            }
+            ul li, ol li {
+                margin-bottom: 10px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #7fceb5;
+            }
+            fieldset {
+                margin-top: 3rem;
+                border: 3px solid #115f46;
+                margin-bottom: 10px;
+            }
+            table, thead, th,  tbody, td {
+                border: 1px solid #115f46;
+                padding: 10px 10px;
+            }
+            .p-border {
+                border-left: 2px solid #115f46;
+                padding-left: 20px;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body> 
+    <h1>CLOSER LOOK AT FUNCTION</h1>
+    <h2>1. <u>DEFAULT PARAMETERS</u></h2>
+    <p><strong>DEFAULT PARAMETERS</strong> are the methods of setting default values to parameters in Javascript. If a function call doesn't provide an argument for a parameter with a default value, that default is used.</p>
+    <ul>
+        <li><strong>SYNTAX:</strong>
+        <ul>
+            <li>function multiply(a, b = 1) {<br>
+                return a * b;<br>
+              } <br>
+              <br>
+              console.log(multiply(5, 2));<br>
+              <span>// Expected output: 10</span><br>
+              <br>
+              console.log(multiply(5));<br>
+              <span>// Expected output: 5</span>
+              </li>
+        </ul></li>
+    </ul>
+    <h3><u>DESCRIPTION</u></h3>
+    <p>In JavaScript, function parameters default to undefined. However, it's often useful to set a different default value. This is where default parameters can help.
+    </p>
+    <!-- HOW PASSING ARGUMENT WORKS -->
+    <h2>2. <u>HOW PASSING ARGUMENT WORKS: Value vs Reference</u></h2>
+    <p><strong>Arguments</strong> is an array-like object accessible inside functions that contains the values of the arguments passed to that function. </p>
+    <ul>
+        <li><strong>SYNTAX:</strong>
+        <ul>
+            <li>function func1(a, b, c) { <br>
+                console.log(arguments[0]);<br>
+                <span>// Expected output: 1</span><br>
+                <br>
+                console.log(arguments[1]); <br>
+                <span>// Expected output: 2</span><br>
+                <br>
+                console.log(arguments[2]); <br>
+                <span>// Expected output: 3</span><br>
+              } <br>
+              <br>
+              func1(1, 2, 3);
+              </li>
+        </ul></li>
+    </ul>
+    <h3>DESCRIPTION</h3>
+    <p>The arguments object is a local variable available within all non-arrow functions. You can refer to a function's arguments inside that function by using its arguments object. It has entries for each argument the function was called with, with the first entry's index at 0.</p>
+
+    <!-- FUNCTION ACCEPTING CALLBACKS FUNCTION -->
+    <h2>3. <u>FUNCTION ACCEPTING CALLBACKS FUNCTION</u></h2>
+    <p>In JavaScript, the way to create a callback function is to pass it as a parameter to another function and then call it back after the task is completed. There are ways to handle callbacks. Use of Promise: A promise can be generated for each callback.</p>
+    <h3>Why do we need Callback Functions?</h3>
+    <p>JavaScript runs code sequentially in top-down order. However, there are some cases that code runs (or must run) after something else happens and also not sequentially. This is called asynchronous programming.</p>
+    <p>Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed. It helps us develop asynchronous JavaScript code and keeps us safe from problems and errors.</p>
+    <p>In JavaScript, the way to create a callback function is to pass it as a parameter to another function, and then to call it back right after something has happened or some task is completed.</p>
+    <ul>
+        <li><strong>SYNTAX:</strong>
+        <ul>
+            <li>
+                const oneWord = function (str) {<br>
+                  return str.replace(/ /g, '').toLowerCase();<br>
+                };<br>
+                <br>
+                const upperFirstWord = function (str) {<br>
+                  const [first, ...others] = str.split(' ');<br>
+                  return [first.toUpperCase(), ...others].join(' ');<br>
+                };<br>
+                
+              <span>  // Higher-order function </span><br>
+                const transformer = function (str, fn) { <br>
+                  console.log(`Original string: ${str}`); <br>
+                  console.log(`Transformed string: ${fn(str)}`); <br>
+                <br>
+                  console.log(`Transformed by: ${fn.name}`);<br>
+                };<br>
+                <br>
+                transformer('JavaScript is the best!', upperFirstWord);<br>
+                transformer('JavaScript is the best!', oneWord);</li>
+        </ul></li>
+    </ul>
+
+    <!-- FUNCTION RETURNING FUNCTION -->
+    <h2>4. <u>FUNCTION RETURNING FUNCTION</u></h2>
+    <p>A function defined inside another function can also access all variables defined in its parent function, and any other variables to which the parent function has access.</p>
+    <ul>
+        <li><strong>SYNTAX:</strong>
+        <ul>
+            <li>const greet = function (greeting) {<br>
+                return function (name) { <br>
+                  <span>console.log(`${greeting} ${name}`);</span> <br>
+                }; <br>
+              }; <br>
+              <br>
+              const greeterHey = greet('Hey'); <br>
+              greeterHey('Jonas'); <br>
+              greeterHey('Steven'); <br>
+              
+              </li>
+        </ul></li>
+    </ul>
+
+    <!-- CALL, APPLY, AND BIND METHOD IN JAVASCRIPT -->
+    <h2>5. <u>CALL, APPLY, AND BIND METHOD IN JAVASCRIPT</u></h2>
+    <p><strong>Call</strong>  method is a predefined JavaScript method. It can be used to invoke (call) a method with an owner object as an argument (parameter). With call() , an object can use a method belonging to another object.
+    </p>
+    <h3>How to Use the Call () Method:</h3>
+    <ul>
+        <li>
+            SYNTAX:
+            <ul>
+                <li>func.call(thisObj, args1, args2, ...)
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- APPLY -->
+    <p>The <strong>apply()</strong> method is one of the most common methods of data preprocessing. It simplifies applying a function on each element in a pandas Series and each row or column in a pandas DataFrame.
+    </p>
+    <ul>
+        <li><strong>SYNTAX:</strong>
+        <ul>
+            <li>const flightData = [583, 'George Cooper']; <br>
+                book.apply(swiss, flightData);<br>
+                console.log(swiss);</li>
+        </ul></li>
+    </ul>
+
+    <!-- BIND -->
+    <p>The <strong>bind()</strong> method of Function instances creates a new function that, when called, calls this function with its this keyword set to the provided value, and a given sequence of arguments preceding any provided when the new function is called.
+    </p>
+
+
+    <fieldset>
+        <legend><strong>CODING CHALLENGE</strong></legend>
+        Let's build a simple poll app!
+        <p>A poll has a question, an array of options from which people can choose, and an 
+            array with the number of replies for each option. This data is stored in the starter 
+            'poll' object below.</p>
+<h4>Your tasks:</h4>
+<ul>
+    <li> Create a method called 'registerNewAnswer' on the 'poll' object. The 
+        method does 2 things:</li>
+    <li>Display a prompt window for the user to input the number of the 
+        selected option. The prompt should look like this: 
+    <ul>
+        <li>What is your favourite programming language?
+            0: JavaScript
+            1: Python
+            2: Rust
+            3: C++</li>
+    </ul></li>
+    <li>
+        Based on the input number, update the 'answers' array property. For 
+        example, if the option is 3, increase the value at position 3 of the array by 
+    </li>
+    <li>Make sure to check if the input is a number and if the number makes 
+        sense (e.g. answer 52 wouldn't make sense, right?)</li>
+    <li>Call this method whenever the user clicks the "Answer poll" button.</li>
+    <li>Create a method 'displayResults' which displays the poll results. The 
+        method takes a string as an input (called 'type'), which can be either 'string'
+        or 'array'. If type is 'array', simply display the results array as it is, using 
+        console.log(). This should be the default option. If type is 'string', display a 
+        string like "Poll results are 13, 2, 4, 1".</li>
+        <li>Run the 'displayResults' method at the end of each 
+            'registerNewAnswer' method call.</li>
+        <li>Bonus: Use the 'displayResults' method to display the 2 arrays in the test 
+            data. Use both the 'array' and the 'string' option. Do not put the arrays in the poll 
+            object! So what should the this keyword look like in this situation?</li>
+        <li><strong>Test data for bonus:</strong>
+            <ul>
+                <li>
+                    § Data 1: [5, 2, 3] <br>
+                    § Data 2: [1, 5, 3, 9, 6, 1]  <br>
+                    Hints: Use many of the tools you learned about in this and the last section �
+                    GOOD LUCK �<br>
+                     const poll = { <br>
+                     question: "What is your favourite programming language?", <br>
+                     options: ["0: JavaScript", "1: Python", "2: Rust", "3: 
+                     C++"], <br>
+                    <span> // This generates [0, 0, 0, 0]</span>. br
+                     answers: new Array(4).fill(0) <br>
+                     } <br></li>
+            </ul>
+        </li>
+</ul>
+
+    </fieldset>
+</body>
+</html>

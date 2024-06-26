@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTIONAL CHAINING AND LOOPING OVER OBJECT</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          h1 {
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            ul li, ol li {
+                margin-bottom: 10px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #7fceb5;
+            }
+            fieldset {
+            margin-bottom: 10px;
+                border: 2px solid black;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>OPTIONAL CHAINING (?.)</h1>
+    <p>The Optional Chaining is a language introduced in ES2020 that allows developers to safely access nested properties of an object without worrying about encountering <b>typeError</b> if any immediate property is null or undefined. It uses <b>?.</b> syntax to short-circuit the evaluation if any property in the chain is null or undefined, returning undefined instead of throwing an error.</p>
+    <ul>
+        <li><b>Syntax:</b>
+        <ul>
+            <li>const  person = { <br> <br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;name: 'John', <br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;address: { <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;city: 'Lagos', <br>
+                &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;zip: 110011
+                <br> &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace; &NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;} 
+                 <br>&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;&NonBreakingSpace;  <br>}
+                 
+                 <span>// without optional chaining</span> <br>
+                 const zipCode = person.address && person.address.zip; <br> <br>
+                 <span>// with optional chaining</span><br>
+                 const zipCode = person.address?. zip;
+                </li>
+        </ul></li>
+    </ul>
+    <h2><u>FEATURES OF OPTIONAL CHAINING</u></h2>
+    <ul>
+        <li><b>Safe Navigation:</b> Allows accessing nested properties or methods of an object without throwing an error  if an intermediate property is null or undefined.</li>
+        <li><b>Short-circuiting:</b> Stops the evaluation of the chain and returns undefined if any property in the chain is null or undefined, preventing errors.</li>
+        <li><b>Concise Syntax:</b> It uses the <b>?.</b> to denote optional chaining, making the code more readable and concise compared to traditional null checks.</li>
+        <li><b>Compability:</b> Works with a wide range of data types, including <b>object</b>, <b>arrays</b> and <b>functions</b> making it versatile for various use cases.</li>
+        <li><b>Improved error Handling:</b> Helps developers write more robust code by avoiding common erros caused by accessing properties of null and undefined values.</li>
+    </ul>
+
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>
+                <p>Write a function called <b>getFirstKeyword</b> that takes the <b>book</b> object as an argument. This function should return the first keyword from the <b>book's</b> keywords property (array) or <b>undefined</b> (if the keywords property doesn't exist). It shouldn't throw an error. <i>Use optional chaining for that.</i>
+                </p>
+            </li>
+        </ul>
+    </fieldset>
+
+    <h1>LOOPING OVER OBJECT: KEYS, VALUES AND ENTRIES</h1>
+    <h2><u>Object.keys Method:</u></h2>
+    <p>The built-in <b>Object.keys()</b> method in JavaScript is used to get an array of all the keys of a given object. The JS feature is designed to loop over all the properties of an object because it is a simple way to access and manipulate each key individually. The idea is to pass the preffered object  keys from as a parameter, and the method returns an array of all the keys in that object.
+    </p>
+    <h2><u>Object.values( )</u></h2>
+    <p>The Object.values() method is used to  access and retrieve all the values ​​of an object as an array quickly, simplifying the way developers manipulate and loop through an array of objects in JS. For instance, for an object called site that contains various properties such as web name, age, occupation, using the Object.values() method allows retrieving all the values of this object in the form of an array.</p>
+    <ul>
+        <li>The syntax is simple and consists of passing the object site as a parameter:
+            <ul>
+                <li>const siteValues = Object.values(site);</li>
+            </ul>
+
+        </li>
+    </ul>
+    <h2><u>The Object.entries() method</u></h2>
+    <p>The Object.entries() method stands for efficient iteration through the keys and values of an object. Simple access to and manipulation of object properties eliminates the need for complex syntax or methods. It takes an object as a parameter and returns an array of arrays. Each inner array consists of two elements, where the first is the <b>object's property key</b>, and the second is the corresponding <b>value</b>. This is a useful feature to loop through an object and access both the keys and values at the same time in JS</p>
+    <ul>
+        <li>
+            <ul>
+                <li>Object.entries(site);</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>FEATURES OF LOOPING OVER OBJECT:</h3>
+    <ul>
+        <li><b>Iterating Over Keys and Values:</b> It is used for easy looping over both the keys and values of an object simulteneously.</li>
+        <li><b>Flexibility:</b> Developers can choose different looping methods.</li>
+        <li><b>Order Preservation:</b> Javascript Objects traditionally do not guarantee any specific order for their properties, However, when looping over object properties. Object methods preserve the order of properties as they appear in the object</li>
+        <li><b>compatibility:</b> These methods are widely supported in modern JavaScript environment, making them reliable for most use cases.</li>
+        <li><b>Ease of Use:</b> Looping over objects is straightforward and can be easily understood by developers familiar with JavaScript.</li>
+    </ul>
+    <fieldset>
+        <legend>EXERCISE:</legend>
+        <ul>
+            <li>
+                <p>Below is the entries variable that stores an empty array. Use the for-of loop together with the Object.keys() method to loop over the thirdParty.goodreads property (array) of the first book object from the books array. For each key, push a new array that contains that key to the entries array.
+                </p>
+                <p>In the end, the entries array should be filled with arrays containing keys:
+                </p>
+                <ul>
+                    <li>[['rating'], ['ratingsCount'], ['reviewsCount'], ['fiveStartRatingCount'], ['oneStartRatingCount']]</li>
+                    <li>const entries = [];</li>
+                </ul>
+            </li>
+            <li>
+                <ul>
+                    <li>The Object.values() method returns an array, which means you can call the Array's entries() method on it, for example, Object.entries(books[0].thirdParty.goodreads).entries(). The Array's entries() method returns [index, value] arrays for each element in the array.
+                    </li>
+                </ul>
+                <p>
+                    Use the for-of loop together with the Object.values() method and Array's entries() method to loop over thirdParty.goodreads property of the first book from the books array.
+                </p>
+                <p>Push each value to the appropriate inner array in the entries array (use index from entries()).
+                </p>
+            </li>
+            <li>
+                <p>Use the Object.entries() method on the thirdParty.goodreads property of the first book from the books array. Assign the returned value to the variable called entries2.
+                </p>
+            </li>
+            <li>
+                <p>Log the entries and entries2 variables to the console, and compare them. They should look the same.
+                </p>
+            </li>
+        </ul>
+
+        <h3><i>CODING CHALLENGE</i></h3>
+        <p>Let's continue with our football betting app! Keep using the <b> 'game'</b> variable from 
+            before.</p>
+            <h4>YOUR TASKS:</h4>
+            <ul>
+                <li>Loop over the game.scored array and print each <b>player</b> name to the console, 
+                    along with the goal number (Example: "Goal 1: Lewandowski")</li>
+                    <li>. Use a loop to calculate the average odd and log it to the console (We already 
+                        studied how to calculate averages, you can go check if you don't remember)</li>
+        <li>Print the 3 odds to the console, but in a nice formatted way, exactly like this:Odd of victory Bayern Munich: 1.33
+                            Odd of draw: 3.25
+                            Odd of victory Borrussia Dortmund: 6.5
+                            Get the team names directly from the game object, don't hardcode them 
+                            (except for "draw"). Hint: Note how the odds and the game objects have the 
+                            same property names </li>
+        <li>Bonus: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this  game, it will look like this:<span> {  <br>  Gnarby: 1, <br>
+            Hummels: 1, <br>
+            Lewandowski: 2 <br>
+           }</span> <br>
+     </li>
+
+            </ul>
+    </fieldset>
+    <script src="assign 56.js"></script>
+</body>
+</html>

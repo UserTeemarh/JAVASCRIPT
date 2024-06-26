@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FOR-OF LOOP</title>
+    <style>
+        body {
+            background: linear-gradient(to top left, #53c442, #115f46);
+            background-repeat: no-repeat;
+            color: white;
+            font-size: 22px;
+          }
+          h1 {
+                color: rgb(58, 58, 10);
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            ul li, ol li {
+                margin-bottom: 5px;
+            }
+            ul li ul {
+                background-color: rgba(24, 24, 27, 0.466);
+                font-size: 20px;
+                padding: 15px 15px;
+                border-radius: 8px 8px;
+                color: white;
+                list-style: none;
+            }
+            ul li ul li {
+                word-spacing: 5px;
+            }
+            span {
+                color: #28b487;
+            }
+            fieldset {
+                margin-top: 4rem;
+                border: 2px solid black;
+            }
+            @media (max-width: 700px) {
+                html {
+                    font-size: 76.5%;
+                }
+                body {
+                    min-width: 300px;
+                }
+            }
+    </style>
+</head>
+<body>
+    <h1>LOOPING ARRAYS: THE FOR-OF LOOP</h1>
+    <p>The <b>for-of</b> statement is used to iterate over iterable objects such as arrays, strings, maps, sets, etc. It provides a cleaner syntax compared to traditional loops like <b>for</b> or <b>while</b>.</p>
+    <p>It executes a loop that operates on a sequence of values sourced from an iterable-object. Iterable objects include instances of built-ins, and other DOM collections and user defined iterables</p>
+    <h3>LOOPING ARRAYS: THE FOR-OF LOOP SYNTAX</h3>
+    <ul>
+        <li>
+            <ul>
+                <li>for (variable of iterable) <br> statement;</li>
+            </ul>
+        </li>
+        <li><b>Variable:</b> <br> Receives a value from the sequence on each iteration, May be either a declaration with <u>const, let or var</u> or assignment target (e.g a previously declared variable, an object property, or destructuring assignment pattern). Variables declared with <u>var</u> are not local to the loop, i.e. They are in the same scope the <b>for-of</b> loop is in</li>
+        <li><b>Iterable:</b>  <br> An iterable object. The source of the sequence of values on which the loop operates.</li>
+        <li><b>Statement:</b><br> A statement to be executed on every iteration. May reference <u>variables</u>. A block statement can be used to execute multiple statement.</li>
+    </ul>
+    <h3>LOOPING ARRAYS: THE FOR-OF LOOP DESCRIPTION</h3>
+    <p>The <b>for-of</b> loop operates on the values sourced from an iterable on by one in sequential order. Each operation of the loop on a value is called an <u>iteration</u>, and on loop is said to iterate over the iterable. Each iteration executes statements that may refer to the current sequence value. </p>
+    <p>When <b>for-of</b> loop iterates over an iterable, it first calls the iterable's method, which returns an iterator, and then repeatedly calls the resulting iterator's method to produce the sequence of values to be assigned to variable.</p>
+    <p>The <b>for-of</b> loop exits when the iterator has completed.</p>
+    <p>The <b>for-of</b> loop exited early (e.g a <u>break</u> statement is encountered or an error is thrown), the return() method of the iterator is called to perform any cleanup.</p>
+    <ul>
+        <li><b>for...of</b> loop makes iterating through collections like arrays and strings straightforward, without the need to manage indexes manually.
+        </li>
+        <li>However, to access indexes while using <b>for...of</b>, you can employ the <b>.entries()</b> method, which returns both the <b>index</b> and <b>value</b> of each item.
+        </li>
+    </ul>
+    <h3><u>The <b>entries()</b> Method in for...of Loop</u></h3>
+    <p>The <b>entries()</b> method is used to return an iterator object with key/value pairs of an array, when used in conjuction with the for-of loop, it iterates over both the index and the value of each element in the array.</p>
+    <ul>
+        <li><b>SYNTAX:</b>
+        <ul>
+            <li>const array = ['a', 'b', 'c']; <br> <br> for (const [index, value] of array.entries()) { <br> <span>console.log(index,value);</span> <br> } </li>
+        </ul></li>
+    </ul>
+    
+    <fieldset>
+        <legend>EXERCISE</legend>
+        <ul>
+            <li>Use the for-of loop to loop over the books array and sum the pages of all books. Use the pageSum variable below, and the pages property of the book objects.
+                <ul>
+                    <li>let pageSum = 0;</li>
+                </ul>
+            </li>
+            <li>
+                <p>Below is the allAuthors variable which stores an empty array. Use the for-of loop to fill allAuthors with the authors of each book from the books array. </p>
+                <p>Remember that each book object has the author property, which can be a string (if there is only a single author) or an array (if there are multiple authors). You may need to use the typeof operator. You can also use multiple loops if needed. The allAuthors array should have just one level (no nested arrays).</p>
+                <ul>
+                    <li>const allAuthors = [];</li>
+                </ul>
+
+            </li>
+            <li>Use the for-of loop together with Array's entries() method to log each author from allAuthors to the console together with its index. Make the index start from 1, instead of 0.</li>
+        </ul>
+    </fieldset>
+
+    <!-- <script src="lesson 54.js"></script> -->
+    <script src="assign 54.js"></script>
+</body>
+</html>
